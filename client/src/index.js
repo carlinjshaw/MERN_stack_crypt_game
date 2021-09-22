@@ -2,10 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-<<<<<<< HEAD
-
-=======
->>>>>>> 84f6638cb194fea7ca8fe664f7749de217c47738
 
 ReactDOM.render(
   <React.StrictMode>
