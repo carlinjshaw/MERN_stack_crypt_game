@@ -30,6 +30,7 @@ const SignupForm = () => {
     try {
       console.log("runs before", userFormData)
       const {data} = await addUser({variables:{...userFormData}})
+      
       // console.log(response)
       Auth.login(data.addUser.token);
       console.log("runs after")
@@ -38,7 +39,7 @@ const SignupForm = () => {
       //   throw new Error('something went wrong!');
       
 
-      // const { token, user } = await data.json();
+      // const {token} = await data.json();
       // console.log(user);
       // Auth.login(token);
     } catch (err) {
