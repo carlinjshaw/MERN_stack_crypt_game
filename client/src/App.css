@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+/* the following three are for the character choice form */
+.character-form {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  width: 30%;
+  border: solid;
+  }
+  
+  .character-questions {
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+  }
+  
+  .character-start-button {
+    width:fit-content;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
