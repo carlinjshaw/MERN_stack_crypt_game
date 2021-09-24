@@ -2,13 +2,18 @@ import React from 'react';
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CharacterForm from './components/CharacterForm';
-import { ApolloProvider, InMemoryCache, createHttpLink, ApolloClient  } from '@apollo/client';
+
+import { ApolloProvider, InMemoryCache, HttpLink, ApolloClient  } from '@apollo/client';
 // import ApolloClient from 'apollo-boost';
 import {setContext} from '@apollo/client/link/context'
 import './App.css'
 // const httpLink = createHttpLink({
 //   uri: `/graphql`,
 // })
+const httpLink = new HttpLink({
+  uri: `http://localhost:3001/graphql`,
+})
+
 
 // const authLink= setContext((_, {headers})=>
 // {
@@ -35,9 +40,9 @@ function App() {
       <CharacterForm></CharacterForm>
 
         <Navbar />
-        {/* <Switch>
-          <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
-        </Switch> */}
+        <Switch>
+          {/* <Route render={}/> */}
+        </Switch>
       </>
     /* </Router>
     </ApolloProvider> */
