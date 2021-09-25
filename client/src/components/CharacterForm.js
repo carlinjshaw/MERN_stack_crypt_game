@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Button, Alert } from 'react-bootstrap'
 import {useState} from 'react';
 import { FormSelect } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const CharacterForm = (props) => {
 return (
@@ -32,7 +33,7 @@ return (
 <div class="character-questions">Name your character:</div>
 
   <input></input>
-      <button class="character-start-button">Start Game</button>
+      <button class="character-start-button"> <Link to='/Round1'>  Start Game</Link></button>
 
 {/* </FloatingLabel> */}
 </div>
@@ -41,3 +42,4 @@ return (
 
 } 
 
+export default CharacterForm;

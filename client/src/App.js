@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CharacterForm from './components/CharacterForm';
-
+import Round1 from './components/pages/Round1'
 import { ApolloProvider, InMemoryCache, HttpLink, ApolloClient  } from '@apollo/client';
 // import ApolloClient from 'apollo-boost';
 import {setContext} from '@apollo/client/link/context'
@@ -38,9 +38,10 @@ function App() {
       <>
 
         <Navbar />
-      <CharacterForm/>
         <Switch>
-        {/* <Route exact path='/' component={CharacterForm} /> */}
+        <Route exact path='/round1' component={Round1} />
+        <Route exact path='/' component= {CharacterForm}/>
+
         </Switch>
       </>
 
