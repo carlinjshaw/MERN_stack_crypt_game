@@ -34,17 +34,17 @@ function App() {
   return (
     <ApolloProvider client={client}>
     <Router>
+      
       <>
-      {/* <CharacterForm></CharacterForm> */}
 
-
-        <Navbar/>
+        <Navbar />
       <CharacterForm/>
         <Switch>
         {/* <Route exact path='/' component={CharacterForm} /> */}
         </Switch>
       </>
-     </Router>
+
+    </Router>
     </ApolloProvider> 
   );
 }
