@@ -1,9 +1,9 @@
 import React from 'react';
-
+import Form from 'react-bootstrap/Form'
 import {useState} from 'react';
 
-const CharacterForm = (props) => {
-
+export default function CharacterForm (props) {
+ return (
 <div class="character-form">
 
 <div class="character-questions">Choose a character:</div>
@@ -20,12 +20,6 @@ const CharacterForm = (props) => {
 
 <div class="character-questions">Choose a weapon:</div>
 
-<Form.Select aria-label="Floating label select example">
-  <option>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</Form.Select>
 
 <div class="character-questions">Name your character:</div>
 
@@ -34,8 +28,8 @@ const CharacterForm = (props) => {
 
 {/* </FloatingLabel> */}
 </div>
+ )
+   
 
-    return <div>{CharacterForm}</div>
 } 
 
-export default CharacterForm;
