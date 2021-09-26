@@ -7,6 +7,13 @@ const typeDefs = gql`
     email:String
   }
 
+  type item{
+    itemId: ID
+    name: String
+    HP: Int
+    attack: Int
+  }
+
 
   type Auth{
     token:ID!
