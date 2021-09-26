@@ -23,3 +23,14 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_CHARACTER = gql`
+  mutation addCharacter($name: String!, $HP: Int!, $attack: Int!) {
+    addCharacter(name: $name, HP: $HP, attack: $attack) {
+      user {
+        _id
+        username
+      }
+    }
+  }
+`;
