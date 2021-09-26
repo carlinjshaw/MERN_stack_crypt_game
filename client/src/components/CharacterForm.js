@@ -5,21 +5,13 @@ import { FormSelect } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ADD_CHARACTER } from '../utils/mutations.js'
 import { useMutation } from '@apollo/client'
+import round1 from './pages/Round1.js';
+
+
 
 const CharacterForm = (props) => {
 
-  const dummyCharacters = [
-    {
- 
-      attack:15,
-      HP:8             
-    },
-    // {
   
-    //   attack: 11,
-    //   HP: 11
-    // }
-  ]
 
   const [charType, setCharType] = useState(0)
   const [charName, setCharName] = useState('')
@@ -37,14 +29,13 @@ const typeHandler = (event) => {
 }
 
 const saveCharacter = async () => {
-  console.log(dummyCharacters[0].HP)
+
+
   let newCharacter = {
-    name: charName,
-    HP: dummyCharacters[0].HP,
-    attack: dummyCharacters[0].attack,
+
   }
 
-  console.log(newCharacter)
+
   try {
     const {data} = await addCharacter({
       variables: { ...newCharacter }
@@ -53,6 +44,8 @@ const saveCharacter = async () => {
   } catch(error){
     console.error(error)
   }
+
+
 
 }
 
@@ -84,8 +77,7 @@ return (
 <div class="character-questions">Name your character:</div>
 
   <input onChange={nameHandler}></input>
-      <button onClick={saveCharacter} class="character-start-button">  Start Game</button>
-
+      <button onClick={saveCharacter} class="character-start-button"> <Link to='/Round1'>  Start Game</Link></button>
 {/* </FloatingLabel> */}
 </div>
  )
@@ -93,4 +85,4 @@ return (
 
 } 
 
-export default CharacterForm;
+export default  CharacterForm;
