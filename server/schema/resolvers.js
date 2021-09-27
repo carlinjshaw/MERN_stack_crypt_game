@@ -1,14 +1,12 @@
-
 const { AuthenticationError } = require("apollo-server-express");
+const { User } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({})
-          .select("-__v -password")
-          .populate("books");
+        const userData = await User.findOne({ _id: context.user._id });
 
         return userData;
       }
@@ -16,6 +14,7 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
   },
+
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
@@ -39,37 +38,26 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    addCharacter: async (parent, args, context) => {
+      console.log("add character running");
+      const character = await Character.create(args);
+      console.log("character created");
+      const updateUser = await User.findOneAndUpdate(
+        {
+          _id: context.user._id,
+        },
+        {
+          $push: {
+            characters: character,
+          },
+        },
+        {
+          new: true,
+        },
+      );
+      return { updateUser };
+    },
   },
-
-  // saveBook: async (parent, args, context) => {
-  //   if (context.user) {
-  //     //   const savedBook = await Book.create({ ...args, username: context.user.username });
-
-  //     const updatedUser = await User.findByIdAndUpdate(
-  //       { _id: context.user._id },
-  //       { $addToSet: { savedBooks: args.input } },
-  //       { new: true },
-  //     );
-
-  //     return updatedUser;
-  //   }
-
-  //   throw new AuthenticationError("You need to be logged in!");
-  // },
-
-  // removeBook: async (parent, args, context) => {
-  //   if (context.user) {
-  //     const updatedUser = await User.findOneAndUpdate(
-  //       { _id: context.user._id },
-  //       { $pull: { savedBooks: { bookId: args.bookId } } },
-  //       { new: true },
-  //     );
-
-  //     return updatedUser;
-  //   }
-
-  //   throw new AuthenticationError("You need to be logged in!");
-  // },
 };
 
 module.exports = resolvers;
