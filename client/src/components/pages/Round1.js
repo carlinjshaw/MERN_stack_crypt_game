@@ -1,13 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { Link } from 'react-router-dom';
-import firstImg from '../../assets/first_img.PNG'
+import { Link } from "react-router-dom";
+import firstImg from "../../assets/first_img.PNG";
 
-
-const round1 = (props) => {
-    return (
-
-      
+const round1 = props => {
+  return (
+    <div class="round1Image" style={{ backgroundImage: `url(${firstImg})` }}>
       <div class="round1">
         <div>
           <img class="round1Image" src={firstImg} alt="Snow"></img>
@@ -31,7 +29,8 @@ const round1 = (props) => {
           </form>
         </div>
       </div>
-    );
-}
+    </div>
+  );
+};
 
 export default round1;
