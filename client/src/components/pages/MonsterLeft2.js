@@ -69,7 +69,7 @@ if (characterHP < 1) {
             <Modal.Title>You have defeated the minotaur!
                 You acquire the minotaur's great scithe, and gain plus 15 in your attack!
             </Modal.Title>
-            <button><Link to='/FinalBattle'>Keep Exploring</Link>  </button>
+            <button><Link to='/lastRound'>Keep Exploring</Link>  </button>
             
         </Modal>
     )
