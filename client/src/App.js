@@ -13,7 +13,9 @@ import { ApolloProvider, InMemoryCache, HttpLink, ApolloClient  } from '@apollo/
 // import ApolloClient from 'apollo-boost';
 import {setContext} from '@apollo/client/link/context'
 import './App.css'
-import round2Left from './components/pages/Round2Left';
+
+import event1 from './components/pages/event'
+
 
 const httpLink = new HttpLink({
   uri: `http://localhost:3001/graphql`,
@@ -46,6 +48,7 @@ function App() {
 
         <Navbar />
         <Switch>
+        <Route exact path='/event1' component={event1} />
         <Route exact path='/round1' component={Round1} />
         <Route exact path='/' component= {CharacterForm}/>
         <Route exact path='/Monster1' component= {Monster1}/>

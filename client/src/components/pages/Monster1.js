@@ -37,6 +37,11 @@ const MonsterBattle = (props) => {
     }
   };
 
+  const roomEnd =()=>{
+    dummyCharacters.attack+= 10
+    dummyCharacters.HP = characterHP
+  };
+
   const [MonsterHP, setMonsterHP] = useState(Monster.HP);
   const attack = (event) => {
     // event.preventDefault()
@@ -64,7 +69,8 @@ if (characterHP < 1) {
             <Modal.Title>You have defeated the Orc!
                 You acquire the Orc's fearsome battle axes, and gain plus 10 in your attack!
             </Modal.Title>
-            <button><Link to='/Round2Left'>Keep Exploring</Link>  </button>
+
+            <button onClick={() => roomEnd()} ><Link to='/Round2Left'>Keep Exploring</Link>  </button>
             
         </Modal>
     )
