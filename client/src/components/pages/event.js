@@ -20,6 +20,22 @@ const event1 = ()=>{
     }
     const chest =() =>{
         dummyCharacters.attack+= 4
+        return(
+            <div>
+     <div>
+            HP {characterHP}/{dummyCharacters.HP}
+          </div>
+          <Modal 
+            size='lg'
+            show
+            >
+                <Modal.Title>You find an steel sword plus 4 to your attack!
+                </Modal.Title>
+                <button> <Link to='/Round2Left'>Head deeper into the cave.</Link></button>
+            </Modal>
+            </div>
+        )
+
     }
 
 
