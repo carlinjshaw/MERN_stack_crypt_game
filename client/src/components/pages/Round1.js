@@ -7,30 +7,27 @@ const round1 = props => {
   return (
     <div class="round1Image" style={{ backgroundImage: `url(${firstImg})` }}>
       <div class="round1">
-        <form action="/action_page.php" class="round1form">
-          <h2>Further you walk, and find a fork in the path...</h2>
+        <div>
+          <img class="round1Image" src={firstImg} alt="Snow"></img>
 
-          <label>
-            <b>To the left, you hear growlings and the stench is fowl. </b>
-          </label>
-          <button type="submit" class="round1btns">
-            {" "}
-            <Link to="/Monster1" class="txt">
-              {" "}
-              Go Left
-            </Link>
-          </button>
+          <form action="/action_page.php" class="round1form">
+            <h2>Shortly after entering the cave, you find a fork in the path...</h2>
 
-          <label for="psw">
-            <b>To the right, you see the glimmer of light and warmth.</b>
-          </label>
-          <button type="submit" class="round1btns">
-            <Link to="/event1" class="txt">
-              {" "}
-              Go Right
-            </Link>
-          </button>
-        </form>
+            <label>
+              <b>To the left, you hear growlings and the stench is fowl. </b>
+            </label>
+            <button  type="submit" class="round1btns">  <Link to='/Monster1'>   Go Left</Link>
+             
+            </button>
+
+            <label for="psw">
+              <b>To the right, you see the glimmer of light and warmth.</b>
+            </label>
+            <button type="submit" class="round1btns">
+            <Link to='/event1'>   Go Right</Link>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

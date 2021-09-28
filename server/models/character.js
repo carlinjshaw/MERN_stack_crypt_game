@@ -11,7 +11,6 @@ const CharSchema = new Schema(
     attack:{
         type: Number,
         required: true,
-
     },
     HP:{
         type: Number,

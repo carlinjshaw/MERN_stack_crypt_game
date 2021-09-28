@@ -105,6 +105,11 @@ body {
   color: #000;
 }
 
+.bonusImgsLeftRoom {
+  width: 250px;
+  height: 250px;
+}
+
 /* Responsive */
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS */
 @media screen and (max-width: 980px) {
