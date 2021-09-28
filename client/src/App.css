@@ -83,6 +83,16 @@
   border-radius: 5px;
 }
 
+.winPageImage {
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 93.8%;
+  width: 100%;
+  position: fixed;
+  justify-content: center;
+}
+
 /* Background  */
 
 body {

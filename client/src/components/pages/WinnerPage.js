@@ -11,13 +11,22 @@ const WinnerPage = (props) => {
 
 
     return (
-        
-    <div class="round1Image" style={{ backgroundImage: `url(${winningImg})` }}>
+      <div
+        class="winPageImage"
+        style={{ backgroundImage: `url(${winningImg})` }}
+      >
+        <form action="/action_page.php" class="round1form">
+          <h2>
+            At your last strength you see the glimmering light of escape. Congratulations on journeying these caves. 
+          </h2>
 
-
-
-</div>
-    )
+          
+          <button type="submit" class="round1btns">
+            <Link to="/">Homepage</Link>
+          </button>
+        </form>
+      </div>
+    );
 }
 
 export default WinnerPage;

@@ -8,6 +8,7 @@ import Round2Left from './components/pages/Round2Left'
 import MonsterLeft2 from './components/pages/MonsterLeft2'
 import LeftBonusRoom from './components/pages/LeftBonusRoom'
 import FinalBattle from './components/pages/FinalBattle'
+import WinnerPage from './components/pages/WinnerPage';
 
 import { ApolloProvider, InMemoryCache, HttpLink, ApolloClient  } from '@apollo/client';
 // import ApolloClient from 'apollo-boost';
@@ -56,6 +57,7 @@ function App() {
         <Route exact path='/MonsterLeft2' component={MonsterLeft2}/>
         <Route exact path='/LeftBonusRoom' component={LeftBonusRoom}/>
         <Route exact path='/FinalBattle' component={FinalBattle}/>
+        <Route exact path='/WinnerPage' component={WinnerPage}/>
 
         </Switch>
       </>
