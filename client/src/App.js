@@ -16,6 +16,11 @@ import {setContext} from '@apollo/client/link/context'
 import './App.css'
 
 import event1 from './components/pages/event'
+import MonsterBattle3 from './components/pages/monster3';
+import event4 from './components/pages/event4';
+import round4 from './components/pages/nxtround';
+import lastRound from './components/pages/lastRound';
+
 
 
 const httpLink = new HttpLink({
@@ -50,9 +55,13 @@ function App() {
         <Navbar />
         <Switch>
         <Route exact path='/event1' component={event1} />
+        <Route exact path='/event4' component={event4} />
         <Route exact path='/round1' component={Round1} />
+        <Route exact path='/round4' component={round4} />
+        <Route exact path='/lastRound' component={lastRound} />
         <Route exact path='/' component= {CharacterForm}/>
         <Route exact path='/Monster1' component= {Monster1}/>
+        <Route exact path='/Monster3' component= {MonsterBattle3}/>
         <Route exact path='/Round2Left' component={Round2Left}/>
         <Route exact path='/MonsterLeft2' component={MonsterLeft2}/>
         <Route exact path='/LeftBonusRoom' component={LeftBonusRoom}/>

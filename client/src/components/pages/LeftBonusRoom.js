@@ -9,7 +9,7 @@ import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 const dummyCharacters = {
     name: "dummy",
     attack: 15,
-    HP: 8,
+    HP: 15,
   };
 
 const BonusPage = (props) => {
@@ -20,36 +20,9 @@ const BonusPage = (props) => {
     const potion = (event) => {
       event.preventDefault()
       setCharacterHP(characterHP + 10);
-    };
-    if (potion()) {
-    return (
-      <Modal 
-      size="lg" 
-      show>
-        <Modal.Title>
-          Hopefully your choice will grant you more success in this journey.
-        </Modal.Title>
-        <button>
-          <Link to="/FinalBattle">Keep Exploring</Link>
-        </button>
-      </Modal>
-    );
-    }
+}
 //this is NOT the best way, but only way I could get the modal to return
-// if (characterHP > 10) {
-//   return (
-//     <Modal 
-//     size="lg" 
-//     show>
-//       <Modal.Title>
-//         Hopefully your choice will grant you more success in this journey.
-//       </Modal.Title>
-//       <button>
-//         <Link to="/FinalBattle">Keep Exploring</Link>
-//       </button>
-//     </Modal>
-//   );
-// }
+
 
 
     const sword = () => {
@@ -57,16 +30,7 @@ const BonusPage = (props) => {
     }
 //this is NOT the best way, but only way I could get the modal to return
 //might need to be changed depending on how we import character data
-if (characterAttack > 15) {
-    return (
-        <Modal size="lg" show>
-          <Modal.Title>
-            Hopefully your choice will grant you more success in this journey.
-          </Modal.Title>
-          <button><Link to="/FinalBattle">Keep Exploring</Link></button>
-        </Modal>
-      );
-    }
+
 
     return (
         <div>
@@ -74,12 +38,12 @@ if (characterAttack > 15) {
             <div>
                 Take a much needed potion for plus 10 health
             <img class="bonusImgsLeftRoom" src={potionImg}></img>
-            <button onClick={() => potion()}>Choose Potion</button>
+            <button onClick={() => potion()}><Link to='/lastRound'>Choose potion</Link></button>
             </div>
             <div>
                 Use this weapon to coninue your conquest and gain plus 5 attack. 
             <img class="bonusImgsLeftRoom" src={swordImg}></img>
-            <button onClick={() => sword()}>Choose Sword</button>
+            <button onClick={() => sword()}><Link to='/lastRound'>Choose Sword</Link></button>
             </div>
 
             <div>Your HP is currentl {characterHP}</div>

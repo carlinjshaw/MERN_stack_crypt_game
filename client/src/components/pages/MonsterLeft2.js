@@ -12,7 +12,7 @@ import round2Left from './Round2Left';
 const dummyCharacters = {
     name: "dummy",
     attack: 25,
-    HP: 8,
+    HP: 15,
   };
   
   const Monster = {
