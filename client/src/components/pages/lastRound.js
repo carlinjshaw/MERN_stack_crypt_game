@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-
 import { Link } from 'react-router-dom';
 import firstImg from '../../assets/first_img.PNG'
 

@@ -2,9 +2,6 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import potionImg from '../../assets/potion.png'
 import swordImg from '../../assets/sword.png'
-import ReactDOM from 'react-dom'
-import { Redirect } from 'react-router'
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 
 const dummyCharacters = {
     name: "dummy",

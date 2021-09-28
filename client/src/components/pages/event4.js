@@ -1,8 +1,5 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import ReactDOM from 'react-dom'
-import { Redirect } from 'react-router'
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import fruitImg from '../../assets/Fruits.png'
 import chestImg from '../../assets/chestplate.png'
 const dummyCharacters = {
@@ -19,39 +16,11 @@ const Event4 = ()=>{
         if(dummyCharacters.HP<characterHP){
             setCharacterHP(characterHP=dummyCharacters.HP)
         }
-        return(
-            <div>
-     <div>
-            HP {characterHP}/{dummyCharacters.HP}
-          </div>
-          <Modal 
-            size='lg'
-            show
-            >
-                <Modal.Title>The fruit heal you for 22 HP!
-                </Modal.Title>
-                <button> <Link to='/round4'>Head deeper into the cave.</Link></button>
-            </Modal>
-            </div>
-        )
+       
     }
     const chest =() =>{
         dummyCharacters.HP+= 16
-        return(
-            <div>
-     <div>
-            HP {characterHP}/{dummyCharacters.HP}
-          </div>
-          <Modal 
-            size='lg'
-            show
-            >
-                <Modal.Title>The chestplate gives you plus 16 to your HP!
-                </Modal.Title>
-                <button> <Link to='/round4'>Head deeper into the cave.</Link></button>
-            </Modal>
-            </div>
-        )
+        
     }
 
 
