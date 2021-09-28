@@ -9,17 +9,17 @@ const dummyCharacters = {
     HP: 8,
   };
 
-const event1 = ()=>{
+const event4 = ()=>{
     const [characterHP, setCharacterHP] = useState(dummyCharacters.HP);
 
     const heal= () =>{
-        setCharacterHP(characterHP +10)
+        setCharacterHP(characterHP +22)
         if(dummyCharacters.HP<characterHP){
             setCharacterHP(characterHP=dummyCharacters.HP)
         }
     }
     const chest =() =>{
-        dummyCharacters.attack+= 4
+        dummyCharacters.HP+= 16
     }
 
 
@@ -43,4 +43,4 @@ const event1 = ()=>{
     )
 }
 
-export default event1
+export default event4
