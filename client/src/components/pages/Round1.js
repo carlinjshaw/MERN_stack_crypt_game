@@ -13,7 +13,7 @@ const round1 = (props) => {
           <img class="round1Image" src={firstImg} alt="Snow"></img>
 
           <form action="/action_page.php" class="round1form">
-            <h2>Further you walk, and find a fork in the path...</h2>
+            <h2>Shortly after entering the cave, you find a fork in the path...</h2>
 
             <label>
               <b>To the left, you hear growlings and the stench is fowl. </b>
