@@ -2,39 +2,28 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom'
 import { Redirect } from 'react-router'
-
+import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
+ import potionImg from '../../assets/potion.png'
+import swordImg from '../../assets/sword.png'
 const dummyCharacters = {
     name: "dummy",
     attack: 15,
-    HP: 8,
+    HP: 15,
   };
 
-const event1 = ()=>{
+const Event1 = ()=>{
     const [characterHP, setCharacterHP] = useState(dummyCharacters.HP);
-
+    const [showModal, setModal] = useState(false)
+    
     const heal= () =>{
         setCharacterHP(characterHP +10)
         if(dummyCharacters.HP<characterHP){
             setCharacterHP(characterHP=dummyCharacters.HP)
         }
+       
     }
     const chest =() =>{
         dummyCharacters.attack+= 4
-        return(
-            <div>
-     <div>
-            HP {characterHP}/{dummyCharacters.HP}
-          </div>
-          <Modal 
-            size='lg'
-            show
-            >
-                <Modal.Title>You find an steel sword plus 4 to your attack!
-                </Modal.Title>
-                <button> <Link to='/Round2Left'>Head deeper into the cave.</Link></button>
-            </Modal>
-            </div>
-        )
 
     }
 
@@ -42,21 +31,22 @@ const event1 = ()=>{
 
     return(
         <div>
- <div>
-        HP {characterHP}/{dummyCharacters.HP}
-      </div>
-      <Modal 
-        size='lg'
-        show
-        >
-            <Modal.Title>You find a chest with a slight glimmer and a cart of potions. 
-                Which do you choose to take?
-            </Modal.Title>
-            <button onClick={() => heal()} >Potions</button>
-            <button onClick={() => chest()} >Open chest</button>
-        </Modal>
+        <div>You discover much needed items! They are too much to carry both, so you can only take one:</div>
+        <div>
+            Take a much needed potion for plus 10 health
+        <img class="bonusImgsLeftRoom" src={potionImg}></img>
+        <button onClick={() => heal()}><Link to='/round4'>Choose potion</Link></button>
         </div>
-    )
+        <div>
+            Use this weapon to coninue your conquest and gain plus 4 attack. 
+        <img class="bonusImgsLeftRoom" src={swordImg}></img>
+        <button onClick={() => chest()}><Link to='/round4'>Choose Sword</Link></button>
+        </div>
+
+        <div>Your HP is currentl {characterHP}</div>
+        <div>Your attack is currently {dummyCharacters.attack}</div>
+    </div>
+)
 }
 
-export default event1
+export default Event1

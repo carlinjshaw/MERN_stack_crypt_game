@@ -14,20 +14,23 @@ import round2Left from './Round2Left';
 const dummyCharacters = {
     name: "dummy",
     attack: 15,
-    HP: 8,
+    HP: 15,
   };
   
   const Monster = {
-    name: "orc",
-    HP: 31,
-    smallAttack: 2,
-    bigAttack: 10,
+    name: "balrog",
+    HP: 300,
+    smallAttack: 6,
+    bigAttack: 200,
   };
   
   
   
   
   const FinalBattle = (props) => {
+    const win=()=>{
+      setMonsterHP(0)
+    }
   
     const [monsterAttack, setmonsterAttack] = useState(0);
     const [characterHP, setCharacterHP] = useState(dummyCharacters.HP);
@@ -66,8 +69,7 @@ const dummyCharacters = {
           <Modal 
           size='lg'
           show>
-              <Modal.Title>You have defeated the Balrog!
-                  You acquire the Orc's fearsome battle axes, and gain plus 10 in your attack!
+              <Modal.Title>You have defeated the Balrog! 
               </Modal.Title>
               {/* <button><Link to='/Round2Left'>Keep Exploring</Link>  </button> */}
               
@@ -87,6 +89,7 @@ const dummyCharacters = {
         <button onClick={() => attack()}>Attack</button>
         <button onClick={()=> block()}>Block</button>
         <img src={balrogImg}></img>
+        <button onClick={()=>win()}>Use Staff </button>
       </div>
     );
   };

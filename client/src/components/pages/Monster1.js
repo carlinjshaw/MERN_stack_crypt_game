@@ -9,7 +9,7 @@ import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 const dummyCharacters = {
   name: "dummy",
   attack: 15,
-  HP: 8,
+  HP: 15,
 };
 
 const Monster = {

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import orcImg from '../../assets/orc_monster.png'
+import slimeImg from '../../assets/Slime-.png'
 import ReactDOM from 'react-dom'
 import { Redirect } from 'react-router'
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
@@ -9,7 +9,7 @@ import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 const dummyCharacters = {
   name: "dummy",
   attack: 15,
-  HP: 8,
+  HP: 15,
 };
 
 const Monster = {
@@ -69,9 +69,9 @@ if (characterHP < 1) {
         >
 
             <Modal.Title>You have defeated the Orc!
-                You acquire the Slimes goopy armor, and gain plus 20HP!
+                You acquire the Slimes goopy armor, and gain plus 20HP and a staff of magic what could it be used for?
             </Modal.Title>
-            <button onClick={() => roomEnd()} ><Link to='/lastRound'>Keep Exploring</Link>  </button>
+            <button onClick={() => roomEnd()} ><Link to='/lastRound'>keep moving forward</Link>  </button>
             
         </Modal>
     )
@@ -81,14 +81,14 @@ if (characterHP < 1) {
     <div>
       <div>{MonsterHP}</div>
 
-      <div>The orc is attacking {monsterAttack}</div>
+      <div>The slime is attacking {monsterAttack}</div>
       <div>
         HP {characterHP}/{dummyCharacters.HP}
       </div>
 
       <button onClick={() => attack()}>Attack</button>
       <button onClick={()=> block()}>Block</button>
-      <img src={orcImg}></img>
+      <img src={slimeImg}></img>
     </div>
   );
 };

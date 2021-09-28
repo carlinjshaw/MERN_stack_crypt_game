@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import firstImg from '../../assets/first_img.PNG'
-
+import caveImg from '../../assets/cave.PNG'
 
 const round4 = (props) => {
     return (
@@ -10,20 +9,20 @@ const round4 = (props) => {
       
       <div class="round1">
         <div>
-          <img class="round1Image" src={firstImg} alt="Snow"></img>
+          <img class="round1Image" src={caveImg} alt="Snow"></img>
 
           <form action="/action_page.php" class="round1form">
-            <h2>Further you walk, and find a fork in the path...</h2>
+            <h2>You keep heading deeper into the crypt and find another fork in the path...</h2>
 
             <label>
-              <b>To the left, you hear growlings and the stench is fowl. </b>
+              <b>To the left you hear menacing squishing sounds. What could it be?. </b>
             </label>
             <button  type="submit" class="round1btns">  <Link to='/Monster3'>   Go Left</Link>
              
             </button>
 
             <label for="psw">
-              <b>To the right, you see the glimmer of light and warmth.</b>
+              <b>To the right, you see an supposedly an armory. What could it hold?</b>
             </label>
             <button type="submit" class="round1btns">
             <Link to='/event4'>   Go Right</Link>
