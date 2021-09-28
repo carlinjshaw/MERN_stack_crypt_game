@@ -23,6 +23,7 @@ const Monster = {
 
 
 const MonsterBattle = (props) => {
+
   const [monsterAttack, setmonsterAttack] = useState(0);
   const [characterHP, setCharacterHP] = useState(dummyCharacters.HP);
 
@@ -54,20 +55,17 @@ const MonsterBattle = (props) => {
 //player blocks monster's attack
   const block = (event) => {
       console.log('blocks')
+      setCharacterHP(characterHP - 1)
       orcAttacks()
   }
 
 if (characterHP < 1) {
     return <Redirect to='/'/>
 } else if (MonsterHP < 1) {
-
-
     return (
         <Modal 
         size='lg'
-        show
-        >
-
+        show>
             <Modal.Title>You have defeated the Orc!
                 You acquire the Orc's fearsome battle axes, and gain plus 10 in your attack!
             </Modal.Title>
