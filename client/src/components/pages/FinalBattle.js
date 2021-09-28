@@ -69,7 +69,7 @@ const dummyCharacters = {
               <Modal.Title>You have defeated the Balrog!
                   You acquire the Orc's fearsome battle axes, and gain plus 10 in your attack!
               </Modal.Title>
-              {/* <button><Link to='/Round2Left'>Keep Exploring</Link>  </button> */}
+              <button><Link to='/WinnerPage'>Keep Exploring</Link>  </button>
               
           </Modal>
       )

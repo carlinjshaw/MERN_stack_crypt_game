@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom'
 import { Redirect } from 'react-router'
+import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 
 const dummyCharacters = {
     name: "dummy",
@@ -9,7 +10,7 @@ const dummyCharacters = {
     HP: 8,
   };
 
-const event1 = ()=>{
+const Event1 = ()=>{
     const [characterHP, setCharacterHP] = useState(dummyCharacters.HP);
 
     const heal= () =>{
@@ -45,4 +46,4 @@ const event1 = ()=>{
     )
 }
 
-export default event1
+export default Event1;
