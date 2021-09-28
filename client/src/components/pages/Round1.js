@@ -26,7 +26,7 @@ const round1 = (props) => {
               <b>To the right, you see the glimmer of light and warmth.</b>
             </label>
             <button type="submit" class="round1btns">
-              Go Right
+            <Link to='/event1'>   Go Right</Link>
             </button>
           </form>
         </div>
