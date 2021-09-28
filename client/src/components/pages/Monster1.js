@@ -69,7 +69,8 @@ if (characterHP < 1) {
             <Modal.Title>You have defeated the Orc!
                 You acquire the Orc's fearsome battle axes, and gain plus 10 in your attack!
             </Modal.Title>
-            <button onClick={() => roomEnd()} ><Link to='/Round2'>Keep Exploring</Link>  </button>
+
+            <button onClick={() => roomEnd()} ><Link to='/Round2Left'>Keep Exploring</Link>  </button>
             
         </Modal>
     )
