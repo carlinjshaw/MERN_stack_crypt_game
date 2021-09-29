@@ -7,9 +7,35 @@ import { useMutation } from '@apollo/client'
 
 
 
+const wizard = {
+  HP: 8,
+  attack: 15
+}
+const brute = {
+  HP: 18,
+  attack: 5
+}
+
+const pokemon = {
+  HP: 10,
+  attack: 9
+}
+
+const knight = {
+  HP: 10,
+  attack: 13
+}
+
+const elf = {
+  HP: 9,
+  attack:14
+}
+
+const sword={attack:10}
+const bow={attack:8}
+const axe={attack:7}
+
 const CharacterForm = (props) => {
-
-
 
   const [charType, setCharType] = useState(0)
   const [charName, setCharName] = useState('')
@@ -27,8 +53,6 @@ const typeHandler = (event) => {
 }
 
 const saveCharacter = async () => {
-
-
   let newCharacter = {
 
   }
@@ -42,9 +66,6 @@ const saveCharacter = async () => {
   } catch(error){
     console.error(error)
   }
-
-
-
 }
 
 return (
@@ -79,8 +100,6 @@ return (
 {/* </FloatingLabel> */}
 </div>
  )
-   
-
 } 
 
 export default  CharacterForm;
