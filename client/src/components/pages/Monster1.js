@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import orcImg from "../../assets/orc_monster.png";
-import ReactDOM from "react-dom";
-import { Redirect } from "react-router";
-import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
+import orcImg from '../../assets/orc_monster.png'
+import { Redirect } from 'react-router'
+import {  Modal } from 'react-bootstrap';
+
 
 const dummyCharacters = {
   name: "dummy",
