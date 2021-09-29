@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import orcImg from '../../assets/orc_monster.png'
 import { Redirect } from 'react-router'
 import {  Modal } from 'react-bootstrap';
-
+import backgroundImg from '../../assets/battle-background1.jpg'
 
 const dummyCharacters = {
   name: "dummy",
@@ -55,7 +55,7 @@ const MonsterBattle = props => {
   };
 
   if (characterHP < 1) {
-    return <Redirect to="/" />;
+    return <Redirect to="/DeathPage" />;
   } else if (MonsterHP < 1) {
     return (
       <Modal size="lg" show>
@@ -72,18 +72,25 @@ const MonsterBattle = props => {
   }
 
   return (
-    <div>
+    <div
+    style= {{
+      backgroundImage: 'url('+backgroundImg+')',
+      backgroundSize: "cover",
+      height: "100vh",
+    }}
+    
+    >
       <div class="info">
         <div>{MonsterHP}</div>
-        <div>The orc is attacking {monsterAttack}</div>
+        <div class="fightText">The orc is attacking {monsterAttack}</div>
         <div>
           HP {characterHP}/{dummyCharacters.HP}
         </div>
 
-        <button class="btn-monster attack" onClick={() => attack()}>
+        <button class="btn-monster attack fightText" onClick={() => attack()}>
           Attack
         </button>
-        <button class="btn-monster block" onClick={() => block()}>
+        <button class="btn-monster block fightText" onClick={() => block()}>
           Block
         </button>
       </div>

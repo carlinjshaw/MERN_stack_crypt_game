@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import minotaurImg from '../../assets/round2LeftBattle.png'
 import { Redirect } from 'react-router'
 import {  Modal } from 'react-bootstrap';
+import backgroundImg from '../../assets/battle-background1.jpg'
 
 
 
@@ -58,7 +59,7 @@ const block = (event) => {
 
 //if monster is defeated
 if (characterHP < 1) {
-    return <Redirect to='/'/>
+    return <Redirect to='/DeathPage'/>
 } else if (MonsterHP < 1) {
     return (
         <Modal 
@@ -76,17 +77,31 @@ if (characterHP < 1) {
 }
 
     return (
-      <div>
-        <div>{MonsterHP}/{Monster.HP}HP</div>
+      <div
+    style= {{
+      backgroundImage: 'url('+backgroundImg+')',
+      backgroundSize: "cover",
+      height: "100vh",
+    }}
+    >
+        <div class="info">
+          <div>
+            {MonsterHP}/{Monster.HP}HP
+          </div>
 
-        <div>The minotaur is attacking {monsterAttack}</div>
-        <div>
-         Your HP {characterHP}/{dummyCharacters.HP}
+          <div>The minotaur is attacking {monsterAttack}</div>
+          <div>
+            Your HP {characterHP}/{dummyCharacters.HP}
+          </div>
+
+          <button class="btn-monster attack" onClick={() => attack()}>
+            Attack
+          </button>
+          <button class="btn-monster block" onClick={() => block()}>
+            Block
+          </button>
         </div>
-
-        <button onClick={() => attack()}>Attack</button>
-        <button onClick={() => block()}>Block</button>
-        <img src={minotaurImg}></img>
+        <img class="minotaurImg" src={minotaurImg}></img>
       </div>
     );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
-import caveImg from '../../assets/cave.PNG'
+// import round4Img from '../../assets/nxtRoundImg.PNG'
+import round4Img from '../../assets/cave4Img.PNG'
 
 const round4 = (props) => {
     return (
@@ -9,9 +9,9 @@ const round4 = (props) => {
       
       <div class="round1">
         <div>
-          <img class="round1Image" src={caveImg} alt="Snow"></img>
+          <img class="round1Image" src={round4Img} alt="Snow"></img>
 
-          <form action="/action_page.php" class="round1form">
+          <form class="form" action="/action_page.php" class="round1form">
             <h2>You keep heading deeper into the crypt and find another fork in the path...</h2>
 
             <label>

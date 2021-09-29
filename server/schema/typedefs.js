@@ -12,6 +12,8 @@ const typeDefs = gql`
   }
 
   type Character {
+    name: String
+    HP: Int
     _id: ID!
     name: String
     HP: Int
