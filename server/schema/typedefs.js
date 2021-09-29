@@ -15,9 +15,6 @@ const typeDefs = gql`
     name: String
     HP: Int
     _id: ID!
-    name: String
-    HP: Int
-    attack: Int
   }
 
   type Auth {

@@ -81,11 +81,8 @@ const MonsterBattle = props => {
     
     >
       <div class="info">
-        <div>{MonsterHP}</div>
+        <div>{MonsterHP}/{Monster.HP}HP</div>
         <div class="fightText">The orc is attacking {monsterAttack}</div>
-        <div>
-          HP {characterHP}/{dummyCharacters.HP}
-        </div>
 
         <button class="btn-monster attack fightText" onClick={() => attack()}>
           Attack
@@ -93,6 +90,9 @@ const MonsterBattle = props => {
         <button class="btn-monster block fightText" onClick={() => block()}>
           Block
         </button>
+        <div>
+          HP {characterHP}/{dummyCharacters.HP}
+        </div>
       </div>
       <img class="monsterimg" src={orcImg}></img>
     </div>

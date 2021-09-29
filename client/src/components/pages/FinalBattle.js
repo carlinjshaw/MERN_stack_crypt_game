@@ -74,12 +74,11 @@ const dummyCharacters = {
   }
   
     return (
-      <div>
+      <div class ="end">
         <div class="info">
           <div>{MonsterHP}</div>
-
           <div>Balrog is attacking {monsterAttack}</div>
-          <div>
+          <div class = "charStats">
             HP {characterHP}/{dummyCharacters.HP}
           </div>
 
