@@ -56,7 +56,7 @@ const resolvers = {
           new: true,
         },
       );
-      return { updateUser };
+      return character;
     },
   },
 };

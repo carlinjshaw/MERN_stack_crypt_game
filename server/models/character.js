@@ -15,8 +15,7 @@ const CharSchema = new Schema(
     HP:{
         type: Number,
         required: true
-    },
-    inventory:[itemSchema],
+    }
     
   },
   // set this to use virtual below
