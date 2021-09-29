@@ -11,7 +11,7 @@ const round4 = (props) => {
         <div>
           <img class="round1Image" src={caveImg} alt="Snow"></img>
 
-          <form action="/action_page.php" class="round1form">
+          <form class="form" action="/action_page.php" class="round1form">
             <h2>You keep heading deeper into the crypt and find another fork in the path...</h2>
 
             <label>

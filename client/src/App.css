@@ -38,11 +38,17 @@
 }
 /* the following three are for the character choice form */
 .character-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 30%;
-  border: solid;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 400px;
+  height: 280px;
+  background-color: white;
+  opacity: 0.7;
+  border-radius: 5px;
+  border: #000 solid 2px;
 }
 
 .character-questions {
@@ -52,13 +58,23 @@
 }
 
 .character-start-button {
-  width: fit-content;
-  justify-content: center;
+  padding: 5px 15px 5px 15px;
+  margin-left: 150px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   text-decoration: none;
+  border: none;
+  color: black;
+  border: 2px solid #000;
+  border-radius: 12px;
 }
 
+.name {
+  margin: auto;
+  display: block;
+  width: 75%;
+}
 /* everything as follows is for the round1 page*/
 
 .round1Image {
@@ -71,7 +87,7 @@
   justify-content: center;
 }
 
-.round1form {
+form {
   position: absolute;
   top: 25%;
   left: 45%;
@@ -121,7 +137,7 @@ body {
   height: 250px;
 }
 
-/* Monster 1 */
+/* Monster Image*/
 .monsterimg {
   position: absolute;
   top: 25%;
@@ -130,20 +146,37 @@ body {
   height: 550px;
 }
 
-.info {
-  text-align: center;
+.finalMonsterImg {
+  position: absolute;
+  top: 23%;
+  left: 26%;
+  width: 900px;
+  height: 720px;
+}
+.minotaurImg {
+  position: absolute;
+  top: 25%;
+  left: 8%;
+  width: 70%;
+  height: 70%;
 }
 
+.info {
+  text-align: center;
+  font-size: 22px;
+}
+
+/* Buttons */
 .btn-monster {
   margin-top: 10px;
   border: none;
   border-radius: 12px;
   transition: transform 0.1s;
 }
-.btn-monster:hover {
+.btn-monster:hover,
+.choose:hover {
   transform: scale(1.1);
 }
-/* Monster 1 End */
 
 .attack {
   margin-right: 10px;
@@ -152,11 +185,49 @@ body {
 .block {
   border: 2px solid #e70c0c;
 }
+.useStaff {
+  margin-left: 10px;
+  border: 2px solid #414643;
+}
+
+/* Bonus */
+p {
+  text-align: center;
+  font-size: 25px;
+}
+
+.items {
+  margin-left: 45%;
+  width: 150px;
+  height: 150px;
+}
+
+.choose {
+  border: none;
+  border-radius: 12px;
+  border: 2px solid #414643;
+  text-decoration: none;
+  transition: transform 0.1s;
+}
 
 /* Responsive */
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS */
 @media screen and (max-width: 980px) {
-  .round1form {
+  .character-form {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 400px;
+    height: 280px;
+    background-color: white;
+    opacity: 0.7;
+    border-radius: 5px;
+    border: #000 solid 2px;
+  }
+
+  form {
     position: absolute;
     top: 10%;
     left: 35%;
@@ -168,36 +239,181 @@ body {
     opacity: 0.7;
     border-radius: 5px;
   }
+
+   .monsterimg {
+    position: absolute;
+    top: 33%;
+    left: 33%;
+    width: 370px;
+    height: 370px;
+  }
+
+   .minotaurImg {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 70%;
+    height: 70%;
+  }
+
+   .finalMonsterImg {
+    position: absolute;
+    top: 30%;
+    left: 29%;
+    width: 450px;
+    height: 450px;
+  }
 }
 
 /* MEDIA QUERY FOR TABLETS */
-@media screen and (max-width: 680px) {
-  .round1form {
+
+@media screen and (max-width: 830px) {
+  form {
     position: absolute;
-    top: 10%;
+    top: 35%;
+    left: 30%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 400px;
+    height: 265px;
+    background-color: white;
+    opacity: 0.7;
+    border-radius: 5px;
+  }
+
+  .info {
+    margin-left: 10px;
+    margin-top: 100px;
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .monsterimg {
+    position: absolute;
+    top: 20%;
+    left: 33%;
+    width: 350px;
+    height: 350px;
+  }
+
+  .finalMonsterImg {
+    position: absolute;
+    top:20%;
+    left: 33%;
+    width: 500px;
+    height: 500px;
+  }
+
+  .minotaurImg {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 70%;
+    height: 70%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .character-form {
+  position: absolute;
+  top: 25%;
+  left: 23%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 400px;
+  height: 280px;
+  background-color: white;
+  opacity: 0.7;
+  border-radius: 5px;
+  border: #000 solid 2px;
+}
+
+  form {
+    position: absolute;
+    top: 20%;
     left: 25%;
     margin-top: -50px;
     margin-left: -50px;
     width: 400px;
-    height: 250px;
+    height: 260px;
     background-color: white;
     opacity: 0.7;
     border-radius: 5px;
+  }
+
+  .monsterimg {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    width: 300px;
+    height: 350px;
+  }
+
+  .finalMonsterImg {
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    width: 350px;
+    height: 350px;
   }
 }
 
 /* MEDIA QUERY FOR MOBILE PHONES */
 @media screen and (max-width: 480px) {
-  .round1form {
+  .character-form {
+  position: absolute;
+  top: 25%;
+  left: 14%;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 400px;
+  height: 280px;
+  background-color: white;
+  opacity: 0.7;
+  border-radius: 5px;
+  border: #000 solid 2px;
+}
+
+  form {
     position: absolute;
-    top: 10%;
+    top: 15%;
     left: 25%;
     margin-top: -50px;
     margin-left: -50px;
     width: 300px;
-    height: 225px;
+    height: 255px;
     background-color: white;
     opacity: 0.7;
     border-radius: 5px;
+  }
+
+  .info {
+    margin-top: 10%;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .monsterimg {
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    width: 300px;
+    height: 350px;
+  }
+
+  .finalMonsterImg {
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    width: 350px;
+    height: 350px;
+  }
+
+  .minotaurImg {
+    position: absolute;
+    top: 30%;
+    left: 5px;
+    width: 100%;
+    height: 70%;
   }
 }
