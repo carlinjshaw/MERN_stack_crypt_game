@@ -121,7 +121,7 @@ body {
   height: 250px;
 }
 
-/* Monster 1 */
+/* Monster */
 .monsterimg {
   position: absolute;
   top: 25%;
@@ -130,20 +130,29 @@ body {
   height: 550px;
 }
 
+.finalMonsterImg {
+  position: absolute;
+  top: 25%;
+  left: 36%;
+  width: 500px;
+  height: 550px;
+}
+
 .info {
   text-align: center;
 }
 
+/* Buttons */
 .btn-monster {
   margin-top: 10px;
   border: none;
   border-radius: 12px;
   transition: transform 0.1s;
 }
-.btn-monster:hover {
+.btn-monster,
+.choose:hover {
   transform: scale(1.1);
 }
-/* Monster 1 End */
 
 .attack {
   margin-right: 10px;
@@ -151,6 +160,30 @@ body {
 }
 .block {
   border: 2px solid #e70c0c;
+}
+.useStaff {
+  margin-left: 10px;
+  border: 2px solid #414643;
+}
+
+/* Bonus */
+p {
+  text-align: center;
+  font-size: 25px;
+}
+
+.items {
+  margin-left: 45%;
+  width: 150px;
+  height: 150px;
+}
+
+.choose {
+  border: none;
+  border-radius: 12px;
+  border: 2px solid #414643;
+  text-decoration: none;
+  transition: transform 0.1s;
 }
 
 /* Responsive */
