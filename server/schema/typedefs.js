@@ -8,11 +8,7 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-<<<<<<< HEAD
-    addCharacter(name: String, attack: Int, HP: Int ):Character
-=======
     addCharacter(name: String, attack: Int, HP: Int): Character
->>>>>>> 8049680a4d270e3e9fbaac8577b0a6c86981dc54
   }
 
   type Character {
