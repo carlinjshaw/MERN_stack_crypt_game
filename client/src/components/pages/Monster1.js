@@ -18,11 +18,7 @@ const Monster = {
   bigAttack: 10,
 };
 
-
-
-
-const MonsterBattle = (props) => {
-
+const MonsterBattle = props => {
   const [monsterAttack, setmonsterAttack] = useState(0);
   const [characterHP, setCharacterHP] = useState(dummyCharacters.HP);
 
@@ -36,13 +32,13 @@ const MonsterBattle = (props) => {
     }
   };
 
-  const roomEnd =()=>{
-    dummyCharacters.attack+= 10
-    dummyCharacters.HP = characterHP
+  const roomEnd = () => {
+    dummyCharacters.attack += 10;
+    dummyCharacters.HP = characterHP;
   };
 
   const [MonsterHP, setMonsterHP] = useState(Monster.HP);
-  const attack = (event) => {
+  const attack = event => {
     // event.preventDefault()
     console.log("attacks");
     setMonsterHP(MonsterHP - dummyCharacters.attack);
@@ -51,44 +47,49 @@ const MonsterBattle = (props) => {
     setCharacterHP(characterHP - monsterAttack);
   };
 
-//player blocks monster's attack
-  const block = (event) => {
-      console.log('blocks')
-      setCharacterHP(characterHP - 1)
-      orcAttacks()
-  }
+  //player blocks monster's attack
+  const block = event => {
+    console.log("blocks");
+    setCharacterHP(characterHP - 1);
+    orcAttacks();
+  };
 
-if (characterHP < 1) {
-    return <Redirect to='/'/>
-} else if (MonsterHP < 1) {
+  if (characterHP < 1) {
+    return <Redirect to="/" />;
+  } else if (MonsterHP < 1) {
     return (
-        <Modal 
-        size='lg'
-        show>
-            <Modal.Title>You have defeated the Orc!
-                You acquire the Orc's fearsome battle axes, and gain plus 10 in your attack!
-            </Modal.Title>
+      <Modal size="lg" show>
+        <Modal.Title>
+          You have defeated the Orc! You acquire the Orc's fearsome battle axes,
+          and gain plus 10 in your attack!
+        </Modal.Title>
 
-            <button onClick={() => roomEnd()} ><Link to='/Round2Left'>Keep Exploring</Link>  </button>
-            
-        </Modal>
-    )
-}
+        <button onClick={() => roomEnd()}>
+          <Link to="/Round2Left">Keep Exploring</Link>{" "}
+        </button>
+      </Modal>
+    );
+  }
 
   return (
     <div>
-      <div>{MonsterHP}</div>
+      <div class="info">
+        <div>{MonsterHP}</div>
+        <div>The orc is attacking {monsterAttack}</div>
+        <div>
+          HP {characterHP}/{dummyCharacters.HP}
+        </div>
 
-      <div>The orc is attacking {monsterAttack}</div>
-      <div>
-        HP {characterHP}/{dummyCharacters.HP}
+        <button class="btn-monster attack" onClick={() => attack()}>
+          Attack
+        </button>
+        <button class="btn-monster block" onClick={() => block()}>
+          Block
+        </button>
       </div>
-
-      <button onClick={() => attack()}>Attack</button>
-      <button onClick={()=> block()}>Block</button>
-      <img src={orcImg}></img>
+      <img class="monsterimg" src={orcImg}></img>
     </div>
   );
 };
 
-export default MonsterBattle
+export default MonsterBattle;
