@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import orcImg from '../../assets/orc_monster.png'
 import { Redirect } from 'react-router'
 import {  Modal } from 'react-bootstrap';
-
+import backgroundImg from '../../assets/battle-background1.jpg'
 
 const dummyCharacters = {
   name: "dummy",
@@ -77,6 +77,7 @@ if (characterHP < 1) {
 
   return (
     <div>
+      <img class="backgroundImg1" src={backgroundImg} alt="Snow"></img>
       <div>{MonsterHP}</div>
 
       <div>The orc is attacking {monsterAttack}</div>
@@ -86,7 +87,7 @@ if (characterHP < 1) {
 
       <button onClick={() => attack()}>Attack</button>
       <button onClick={()=> block()}>Block</button>
-      <img src={orcImg}></img>
+      <img class="orcImg" src={orcImg}></img>
     </div>
   );
 };
