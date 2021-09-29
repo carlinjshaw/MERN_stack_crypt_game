@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import minotaurImg from '../../assets/round2LeftBattle.png'
 import { Redirect } from 'react-router'
 import {  Modal } from 'react-bootstrap';
+import backgroundImg from '../../assets/battle-background1.jpg'
 
 
 
@@ -58,7 +59,7 @@ const block = (event) => {
 
 //if monster is defeated
 if (characterHP < 1) {
-    return <Redirect to='/'/>
+    return <Redirect to='/DeathPage'/>
 } else if (MonsterHP < 1) {
     return (
         <Modal 
@@ -76,7 +77,13 @@ if (characterHP < 1) {
 }
 
     return (
-      <div>
+      <div
+    style= {{
+      backgroundImage: 'url('+backgroundImg+')',
+      backgroundSize: "cover",
+      height: "100vh",
+    }}
+    >
         <div class="info">
           <div>
             {MonsterHP}/{Monster.HP}HP

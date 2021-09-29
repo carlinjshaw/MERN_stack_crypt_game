@@ -142,8 +142,8 @@ body {
   position: absolute;
   top: 25%;
   left: 30%;
-  width: 500px;
-  height: 550px;
+  width: 600px;
+  height: 650px;
 }
 
 .finalMonsterImg {
@@ -164,6 +164,7 @@ body {
 .info {
   text-align: center;
   font-size: 22px;
+color: white
 }
 
 /* Buttons */
@@ -342,7 +343,7 @@ p {
   }
 
   .monsterimg {
-    position: absolute;
+    position:relative;
     top: 25%;
     left: 30%;
     width: 300px;
@@ -417,3 +418,4 @@ p {
     height: 70%;
   }
 }
+
