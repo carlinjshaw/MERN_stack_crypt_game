@@ -121,6 +121,38 @@ body {
   height: 250px;
 }
 
+/* Monster 1 */
+.monsterimg {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  width: 500px;
+  height: 550px;
+}
+
+.info {
+  text-align: center;
+}
+
+.btn-monster {
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.1s;
+}
+.btn-monster:hover {
+  transform: scale(1.1);
+}
+/* Monster 1 End */
+
+.attack {
+  margin-right: 10px;
+  border: 2px solid #098037;
+}
+.block {
+  border: 2px solid #e70c0c;
+}
+
 /* Responsive */
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS */
 @media screen and (max-width: 980px) {
