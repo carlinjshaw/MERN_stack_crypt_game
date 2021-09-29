@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import minotaurImg from '../../assets/round2LeftBattle.png'
-import ReactDOM from 'react-dom'
 import { Redirect } from 'react-router'
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-import round2Left from './Round2Left';
+import {  Modal } from 'react-bootstrap';
+
 
 
 //import the stats or make dummy data?
@@ -70,7 +69,7 @@ if (characterHP < 1) {
             <Modal.Title>You have defeated the minotaur!
                 You acquire the minotaur's great scithe, and gain plus 15 in your attack!
             </Modal.Title>
-            <button><Link to='/FinalBattle'>Keep Exploring</Link>  </button>
+            <button><Link to='/lastRound'>Keep Exploring</Link>  </button>
             
         </Modal>
     )
@@ -78,7 +77,7 @@ if (characterHP < 1) {
 
     return (
       <div>
-        <div>Minotaur has {MonsterHP} health</div>
+        <div>{MonsterHP}/{Monster.HP}HP</div>
 
         <div>The minotaur is attacking {monsterAttack}</div>
         <div>

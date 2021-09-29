@@ -1,14 +1,9 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-
 import balrogImg from '../../assets/balrog.PNG'
-
-import minotaurImg from '../../assets/round2LeftBattle.png'
-
-import ReactDOM from 'react-dom'
 import { Redirect } from 'react-router'
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-import round2Left from './Round2Left';
+import { Modal} from 'react-bootstrap';
+
 
 
 const dummyCharacters = {
@@ -69,8 +64,12 @@ const dummyCharacters = {
           <Modal 
           size='lg'
           show>
+<<<<<<< HEAD
               <Modal.Title>You have defeated the mighty Balrog!
                   
+=======
+              <Modal.Title>You have defeated the Balrog! 
+>>>>>>> 0718401bda4949e5b0866eb04a019a3022008c8d
               </Modal.Title>
               <button><Link to='/WinnerPage'>Continue</Link>  </button>
               
