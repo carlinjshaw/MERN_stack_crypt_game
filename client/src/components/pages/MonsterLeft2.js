@@ -77,16 +77,24 @@ if (characterHP < 1) {
 
     return (
       <div>
-        <div>{MonsterHP}/{Monster.HP}HP</div>
+        <div class="info">
+          <div>
+            {MonsterHP}/{Monster.HP}HP
+          </div>
 
-        <div>The minotaur is attacking {monsterAttack}</div>
-        <div>
-         Your HP {characterHP}/{dummyCharacters.HP}
+          <div>The minotaur is attacking {monsterAttack}</div>
+          <div>
+            Your HP {characterHP}/{dummyCharacters.HP}
+          </div>
+
+          <button class="btn-monster attack" onClick={() => attack()}>
+            Attack
+          </button>
+          <button class="btn-monster block" onClick={() => block()}>
+            Block
+          </button>
         </div>
-
-        <button onClick={() => attack()}>Attack</button>
-        <button onClick={() => block()}>Block</button>
-        <img src={minotaurImg}></img>
+        <img class="minotaurImg" src={minotaurImg}></img>
       </div>
     );
 }

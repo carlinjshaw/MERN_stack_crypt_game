@@ -75,17 +75,23 @@ const dummyCharacters = {
   
     return (
       <div>
-        <div>{MonsterHP}</div>
-  
-        <div>Balrog is attacking {monsterAttack}</div>
-        <div>
-          HP {characterHP}/{dummyCharacters.HP}
+        <div class="info">
+          <div>{MonsterHP}</div>
+
+          <div>Balrog is attacking {monsterAttack}</div>
+          <div>
+            HP {characterHP}/{dummyCharacters.HP}
+          </div>
+
+          <button class="btn-monster attack" onClick={() => attack()}>
+            Attack
+          </button>
+          <button class="btn-monster block" onClick={() => block()}>
+            Block
+          </button>
+          <button class="btn-monster useStaff" onClick={() => win()}>Use Staff </button>
         </div>
-  
-        <button onClick={() => attack()}>Attack</button>
-        <button onClick={()=> block()}>Block</button>
-        <img src={balrogImg}></img>
-        <button onClick={()=>win()}>Use Staff </button>
+        <img class="finalMonsterImg" src={balrogImg}></img>
       </div>
     );
   };
