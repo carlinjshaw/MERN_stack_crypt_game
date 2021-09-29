@@ -18,7 +18,6 @@ const BonusPage = (props) => {
     const [characterAttack, setCharacterAttack] = useState(dummyCharacters.attack)
 
     const potion = (event) => {
-      event.preventDefault()
       setCharacterHP(characterHP + 10);
 }
 //this is NOT the best way, but only way I could get the modal to return

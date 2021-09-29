@@ -69,12 +69,8 @@ const dummyCharacters = {
           <Modal 
           size='lg'
           show>
-<<<<<<< HEAD
               <Modal.Title>You have defeated the mighty Balrog!
                   
-=======
-              <Modal.Title>You have defeated the Balrog! 
->>>>>>> 2238c50c9732e395d6a16ac22e6d5b53afd5f23c
               </Modal.Title>
               <button><Link to='/WinnerPage'>Continue</Link>  </button>
               
