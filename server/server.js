@@ -66,7 +66,7 @@ async function startApolloServer(typeDefs, resolvers) {
   await server.start();
   server.applyMiddleware({
     app,
-    path: '/'
+    path: '/graphql'
   });
 
   app.use(express.urlencoded({ extended: false }));
