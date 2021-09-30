@@ -19,7 +19,10 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    characters:[CharSchema],
+    characters:[{
+      type: CharSchema,
+      required: false
+    }],
     
   },
   // set this to use virtual below
