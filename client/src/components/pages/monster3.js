@@ -79,6 +79,7 @@ console.log(oldChar)
       <div class="info">
         <div>{MonsterHP}</div>
 
+        <div>{MonsterHP}/{Monster.HP}HP</div>
         <div>The slime is attacking {monsterAttack}</div>
         <div class ="charStats">{characterHP}HP</div>
         <div class= "charStats"> {oldChar.attack}Atk</div>

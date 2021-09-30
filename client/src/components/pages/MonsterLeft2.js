@@ -84,11 +84,10 @@ if (characterHP < 1) {
     }}
     >
         <div class="info">
+        <div>{MonsterHP}/{Monster.HP}HP</div>
+          <div>The minotaur is attacking {monsterAttack}</div>
         <div class ="charStats">{characterHP}HP</div>
         <div class= "charStats"> {oldChar.attack}Atk</div>
-          <div>The minotaur is attacking {monsterAttack}</div>
-          <div>Your HP is currentl {characterHP}</div>
-        <div>Your attack is currently {oldChar.attack}</div>
 
           <button class="btn-monster attack" onClick={() => attack()}>
             Attack
