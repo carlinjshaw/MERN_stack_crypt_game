@@ -39,7 +39,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addCharacter: async (parent, args, context) => {
+    addCharacter: async (parent, args) => {
       console.log("add character running");
       const character = await Character.create(args);
       console.log("character created");
