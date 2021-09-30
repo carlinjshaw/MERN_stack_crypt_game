@@ -25,7 +25,7 @@ import lastRound from './components/pages/lastRound';
 
 
 const httpLink = new HttpLink({
-  uri: `http://localhost:3001/graphql`,
+  uri: `/graphql`,
 })
 
 
