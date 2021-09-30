@@ -23,12 +23,15 @@ const dummyCharacters = {
   
   
   const FinalBattle = (props) => {
+  const {oldChar}= props.location.state.newChar
+
+
     const win=()=>{
       setMonsterHP(0)
     }
   
     const [monsterAttack, setmonsterAttack] = useState(0);
-    const [characterHP, setCharacterHP] = useState(dummyCharacters.HP);
+    const [characterHP, setCharacterHP] = useState(oldChar.HP);
     const [MonsterHP, setMonsterHP] = useState(Monster.HP);
   
     const orcAttacks = () => {
@@ -44,7 +47,7 @@ const dummyCharacters = {
     const attack = (event) => {
       // event.preventDefault()
       console.log("attacks");
-      setMonsterHP(MonsterHP - dummyCharacters.attack);
+      setMonsterHP(MonsterHP - oldChar.attack);
       orcAttacks();
   
       setCharacterHP(characterHP - monsterAttack);
@@ -79,7 +82,7 @@ const dummyCharacters = {
           <div>{MonsterHP}</div>
           <div>Balrog is attacking {monsterAttack}</div>
           <div class = "charStats">
-            HP {characterHP}/{dummyCharacters.HP}
+            HP {characterHP}/{oldChar.HP}
           </div>
 
           <button class="btn-monster attack" onClick={() => attack()}>

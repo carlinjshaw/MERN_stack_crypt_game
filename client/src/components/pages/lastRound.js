@@ -8,16 +8,24 @@ const dummyCharacters = {
     HP: 15,
   };
 const LastRound = (props) => {
-    const [characterHP, setCharacterHP] = useState(dummyCharacters.HP);
+  const {oldChar}= props.location.state.newChar
+
+  let newChar={
+    name:oldChar.name,
+    attack: oldChar.attack,
+    HP: oldChar.HP
+}
+    const [characterHP, setCharacterHP] = useState(oldChar.HP);
     const heal= () =>{
         setCharacterHP(characterHP +25)
-        if(dummyCharacters.HP<characterHP){
-            setCharacterHP(characterHP=dummyCharacters.HP)
-            
-        }}
+        if(oldChar.HP<characterHP){
+            setCharacterHP(characterHP=oldChar.HP)
+        }
+        
+      }
 
         const chest =() =>{
-            dummyCharacters.attack+= 6
+           newChar.attack= oldChar.attack + 6
             
         }
 

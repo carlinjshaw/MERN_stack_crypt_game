@@ -19,8 +19,11 @@ const Monster = {
 };
 
 const MonsterBattle = props => {
+
+  const {oldChar}= props.location.state.oldChar
+
   const [monsterAttack, setmonsterAttack] = useState(0);
-  const [characterHP, setCharacterHP] = useState(dummyCharacters.HP);
+  const [characterHP, setCharacterHP] = useState(oldChar.HP);
 
   const orcAttacks = () => {
     var number = Math.floor(Math.random() * 2);
@@ -37,7 +40,7 @@ const MonsterBattle = props => {
   const attack = event => {
     // event.preventDefault()
     console.log("attacks");
-    setMonsterHP(MonsterHP - dummyCharacters.attack);
+    setMonsterHP(MonsterHP - oldChar.attack);
     orcAttacks();
 
     setCharacterHP(characterHP - monsterAttack);
@@ -54,9 +57,9 @@ const MonsterBattle = props => {
     return <Redirect to="/DeathPage" />;
   } else if (MonsterHP < 1) {
       let newChar ={
-        attack: dummyCharacters.attack += 10,
+        attack: oldChar.attack += 10,
         HP: characterHP,
-        name: dummyCharacters.name
+        name: oldChar.name
     };
     return (
       <Modal size="lg" show>
@@ -92,7 +95,7 @@ const MonsterBattle = props => {
           Block
         </button>
         <div>
-          HP {characterHP}/{dummyCharacters.HP}
+          HP {characterHP}/{oldChar.HP}
         </div>
       </div>
       <img class="monsterimg" src={orcImg}></img>

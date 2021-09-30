@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import round4Img from '../../assets/cave4Img.PNG'
 
 const round4 = (props) => {
+  const {oldChar}= props.location.state.newChar
+
     return (
 
       
@@ -17,7 +19,7 @@ const round4 = (props) => {
             <label>
               <b>To the left you hear menacing squishing sounds. What could it be?. </b>
             </label>
-            <button  type="submit" class="round1btns">  <Link to='/Monster3'>   Go Left</Link>
+            <button  type="submit" class="round1btns">  <Link to={{pathname:'/Monster3', state:{oldChar}}}>   Go Left</Link>
              
             </button>
 
@@ -25,7 +27,7 @@ const round4 = (props) => {
               <b>To the right, you see an supposedly an armory. What could it hold?</b>
             </label>
             <button type="submit" class="round1btns">
-            <Link to='/event4'>   Go Right</Link>
+            <Link to={{pathname:'/event4',state:{oldChar}}}>   Go Right</Link>
             </button>
           </form>
         </div>

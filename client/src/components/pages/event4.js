@@ -8,17 +8,27 @@ const dummyCharacters = {
   HP: 15,
 };
 
-const Event4 = () => {
-  const [characterHP, setCharacterHP] = useState(dummyCharacters.HP);
+const Event4 = (props) => {
+  const {oldChar}= props.location.state.oldChar
 
+  const [characterHP, setCharacterHP] = useState(oldChar.HP);
+
+  let newChar={
+    name:oldChar.name,
+    attack: oldChar.attack,
+    HP: oldChar.HP
+}
   const heal = () => {
     setCharacterHP(characterHP + 22);
-    if (dummyCharacters.HP < characterHP) {
-      setCharacterHP((characterHP = dummyCharacters.HP));
+    if (oldChar.HP < characterHP) {
+      setCharacterHP((characterHP = oldChar.HP));
     }
+    newChar.HP= characterHP
+
   };
   const chest = () => {
-    dummyCharacters.HP += 16;
+    newChar.attack = oldChar.attack + 16;
+    
   };
 
   return (
@@ -45,7 +55,7 @@ const Event4 = () => {
       </div>
       <p>
         <div>Your HP is currentl {characterHP}</div>
-        <div>Your attack is currently {dummyCharacters.attack}</div>
+        <div>Your attack is currently {oldChar.attack}</div>
       </p>
     </div>
   );
