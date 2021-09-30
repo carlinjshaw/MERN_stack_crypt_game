@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Character } from "../../../../server/models";
+// import { Character } from "../../../../server/models";
 import potionImg from "../../assets/potion.png";
 import swordImg from "../../assets/sword.png";
 

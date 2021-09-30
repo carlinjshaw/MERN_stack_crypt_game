@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import firstImg from "../../assets/first_img.PNG";
 
 const round1 = props => {
-  const {oldChar}= props.location.state.newChar
+  const {oldChar}= props.location.state.newCharacter
+  console.log(oldChar)
   return (
     <div class="round1Image" style={{ backgroundImage: `url(${firstImg})` }}>
       <div class="round1">
@@ -25,7 +26,7 @@ const round1 = props => {
               <b>To the right, you see the glimmer of light and warmth.</b>
             </label>
             <button type="submit" class="round1btns">
-            <Link to={{pathname='/event1', state:{oldChar}}}>Go Right</Link>
+            <Link to={{pathname:'/event1', state:{oldChar}}}>Go Right</Link>
             </button>
           </form>
         </div>

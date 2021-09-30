@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
 import { FormSelect } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { ADD_CHARACTER } from '../utils/mutations.js'
 import { useMutation } from '@apollo/client'
 
@@ -87,11 +87,13 @@ const saveCharacter = async () => {
     })
     console.log(data)
 
-    window.location.replace = '/Round1'
 
   } catch(error){
     console.error(error)
   }
+  return(
+    <Redirect to={{pathname:"/round1",state:{newCharacter}}}/>
+)
 }
 
 return (
