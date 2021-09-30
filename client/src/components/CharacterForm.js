@@ -37,20 +37,15 @@ const axe={attack:7}
 
 const CharacterForm = (props) => {
 
-  const [charType, setCharType] = useState(0)
-  const [charName, setCharName] = useState('')
+  // const [CharStats, setCharStats] = useState({name:'',HP:0,attack:0})
 
   const [addCharacter, {error}] = useMutation(ADD_CHARACTER)
 
-const nameHandler = (event) => {
+const inputHandler = (event) => {
    const {value} = event.target
-   setCharName(value)
+  //  setCharName(value)
 }
 
-const typeHandler = (event) => {
-  const {value} = event.target
-  setCharType(value)
-}
 
 const saveCharacter = async () => {
   let newCharacter = {
@@ -75,12 +70,13 @@ return (
 
 {/* <FloatingLabel controlId="floatingSelect" label="Works with selects" */}
 
-<FormSelect  onChange={typeHandler} aria-label="Floating label select example">
+<FormSelect  onChange={inputHandler} aria-label="Floating label select example">
   <option>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Saved Character Gandalf</option>
-  <option value="4">Saved Character Goku</option>
+  <option value={elf}>Elf</option>
+  <option value={knight}>Knight</option>
+  <option value={pokemon}>Pokemon</option>
+  <option value={brute}>Brute</option>
+  <option value={wizard}>Wizard</option>
 </FormSelect>
 
 
@@ -88,14 +84,14 @@ return (
 
 <FormSelect aria-label="Floating label select example">
   <option>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
+  <option value={bow}>Bow</option>
+  <option value={sword}>Sword</option>
+  <option value={axe}>Axe</option>
 </FormSelect>
 
 <div class="character-questions">Name your character:</div>
 
-  <input class="name" onChange={nameHandler}></input>
+  <input class="name" onChange={inputHandler}></input>
       <button onClick={saveCharacter} class="character-start-button"> <Link to='/Round1'>  Start Game</Link></button>
 {/* </FloatingLabel> */}
 </div>
