@@ -3,14 +3,6 @@ import { Link } from 'react-router-dom';
 import balrogImg from '../../assets/balrog.PNG'
 import { Redirect } from 'react-router'
 import { Modal} from 'react-bootstrap';
-
-
-
-const dummyCharacters = {
-    name: "dummy",
-    attack: 15,
-    HP: 15,
-  };
   
   const Monster = {
     name: "balrog",
@@ -81,10 +73,8 @@ const dummyCharacters = {
         <div class="info">
           <div>{MonsterHP}</div>
           <div>Balrog is attacking {monsterAttack}</div>
-          <div class = "charStats">
-            HP {characterHP}/{oldChar.HP}
-          </div>
-
+          <div class ="charStats">{characterHP}HP</div>
+        <div class= "charStats"> {oldChar.attack}Atk</div>
           <button class="btn-monster attack" onClick={() => attack()}>
             Attack
           </button>

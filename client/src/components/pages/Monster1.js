@@ -5,12 +5,6 @@ import { Redirect } from 'react-router'
 import {  Modal } from 'react-bootstrap';
 import backgroundImg from '../../assets/battle-background1.jpg'
 
-const dummyCharacters = {
-  name: "dummy",
-  attack: 15,
-  HP: 15,
-};
-
 const Monster = {
   name: "orc",
   HP: 31,
@@ -94,9 +88,8 @@ const MonsterBattle = props => {
         <button class="btn-monster block fightText" onClick={() => block()}>
           Block
         </button>
-        <div>
-          HP {characterHP}/{oldChar.HP}
-        </div>
+        <div class ="charStats">{characterHP}HP</div>
+        <div class= "charStats"> {oldChar.attack}Atk</div>
       </div>
       <img class="monsterimg" src={orcImg}></img>
     </div>

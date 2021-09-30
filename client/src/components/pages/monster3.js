@@ -6,12 +6,6 @@ import {  Modal} from 'react-bootstrap';
 import backgroundImg from '../../assets/battle-background1.jpg'
 
 
-const dummyCharacters = {
-  name: "dummy",
-  attack: 15,
-  HP: 15,
-};
-
 const Monster = {
   name: "Slime",
   HP: 55,
@@ -85,10 +79,8 @@ const MonsterBattle3 = props => {
         <div>{MonsterHP}</div>
 
         <div>The slime is attacking {monsterAttack}</div>
-        <div>
-          HP {characterHP}/{oldChar.HP}
-        </div>
-
+        <div class ="charStats">{characterHP}HP</div>
+        <div class= "charStats"> {oldChar.attack}Atk</div>
         <button class="attack btn-monster" onClick={() => attack()}>
           Attack
         </button>

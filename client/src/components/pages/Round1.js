@@ -11,7 +11,8 @@ const round1 = props => {
       <div class="round1">
         <div>
           <img class="round1Image" src={firstImg} alt="Snow"></img>
-
+          <div class ="charStats">{oldChar.HP}HP</div>
+        <div class= "charStats"> {oldChar.attack}Atk</div>
           <form action="/action_page.php" class="round1form">
             <h2>Shortly after entering the cave, you find a fork in the path...</h2>
 

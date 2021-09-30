@@ -12,7 +12,8 @@ console.log(oldChar)
 <div class="round1">
         <div>
           <img class="round1Image" src={round2Img} alt="Snow"></img>
-
+          <div class ="charStats">{oldChar.HP}HP</div>
+        <div class= "charStats"> {oldChar.attack}Atk</div>
           <form action="/action_page.php" class="round1form">
             <h2>Growing weary, but continuing, you find another choice before you. </h2>
 

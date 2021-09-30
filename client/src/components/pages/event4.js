@@ -2,11 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import fruitImg from "../../assets/Fruits.png";
 import chestImg from "../../assets/chestplate.png";
-const dummyCharacters = {
-  name: "dummy",
-  attack: 15,
-  HP: 15,
-};
 
 const Event4 = (props) => {
   const {oldChar}= props.location.state.oldChar
@@ -54,8 +49,8 @@ const Event4 = (props) => {
         </button>
       </div>
       <p>
-        <div>Your HP is currentl {characterHP}</div>
-        <div>Your attack is currently {oldChar.attack}</div>
+      <div class ="charStats">{characterHP}HP</div>
+        <div class= "charStats"> {oldChar.attack}Atk</div>
       </p>
     </div>
   );

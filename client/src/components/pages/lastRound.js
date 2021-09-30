@@ -2,11 +2,6 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import firstImg from '../../assets/first_img.PNG'
 
-const dummyCharacters = {
-    name: "dummy",
-    attack: 15,
-    HP: 15,
-  };
 const LastRound = (props) => {
   const {oldChar}= props.location.state.newChar
 
@@ -21,7 +16,7 @@ const LastRound = (props) => {
         if(oldChar.HP<characterHP){
             setCharacterHP(characterHP=oldChar.HP)
         }
-        
+
       }
 
         const chest =() =>{
@@ -34,6 +29,8 @@ const LastRound = (props) => {
       
       <div class="round1">
         <div>
+        <div class ="charStats">{characterHP}HP</div>
+        <div class= "charStats"> {oldChar.attack}Atk</div>
           <img class="round1Image" src={firstImg} alt="Snow"></img>
 
           <form action="/action_page.php" class="round1form">

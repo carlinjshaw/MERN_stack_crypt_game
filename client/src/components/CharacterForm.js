@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
 import { FormSelect } from 'react-bootstrap';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { ADD_CHARACTER } from '../utils/mutations.js'
 import { useMutation } from '@apollo/client'
 

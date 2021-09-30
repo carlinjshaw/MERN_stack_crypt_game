@@ -5,15 +5,6 @@ import { Redirect } from 'react-router'
 import {  Modal } from 'react-bootstrap';
 import backgroundImg from '../../assets/battle-background1.jpg'
 
-
-
-//import the stats or make dummy data?
-//dummy data
-const dummyCharacters = {
-    name: "dummy",
-    attack: 25,
-    HP: 15,
-  };
   
   const Monster = {
     name: "orc",
@@ -92,14 +83,11 @@ if (characterHP < 1) {
     }}
     >
         <div class="info">
-          <div>
-            {MonsterHP}/{Monster.HP}HP
-          </div>
-
+        <div class ="charStats">{characterHP}HP</div>
+        <div class= "charStats"> {oldChar.attack}Atk</div>
           <div>The minotaur is attacking {monsterAttack}</div>
-          <div>
-            Your HP {characterHP}/{oldChar.HP}
-          </div>
+          <div>Your HP is currentl {characterHP}</div>
+        <div>Your attack is currently {oldChar.attack}</div>
 
           <button class="btn-monster attack" onClick={() => attack()}>
             Attack

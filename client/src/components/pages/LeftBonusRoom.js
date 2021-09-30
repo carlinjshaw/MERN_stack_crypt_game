@@ -65,8 +65,8 @@ const BonusPage = props => {
         </button>
       </div>
       <p>
-        <div>Your HP is currentl {characterHP}</div>
-        <div>Your attack is currently {characterAttack}</div>
+      <div class ="charStats">{characterHP}HP</div>
+        <div class= "charStats"> {oldChar.attack}Atk</div>
       </p>
     </div>
   );
