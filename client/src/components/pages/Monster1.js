@@ -32,11 +32,7 @@ const MonsterBattle = props => {
     }
   };
 
-  const roomEnd = () => {
-    dummyCharacters.attack += 10;
-    dummyCharacters.HP = characterHP;
-  };
-
+  
   const [MonsterHP, setMonsterHP] = useState(Monster.HP);
   const attack = event => {
     // event.preventDefault()
@@ -46,17 +42,22 @@ const MonsterBattle = props => {
 
     setCharacterHP(characterHP - monsterAttack);
   };
-
+  
   //player blocks monster's attack
   const block = event => {
     console.log("blocks");
     setCharacterHP(characterHP - 1);
     orcAttacks();
   };
-
+  
   if (characterHP < 1) {
     return <Redirect to="/DeathPage" />;
   } else if (MonsterHP < 1) {
+      let newChar ={
+        attack: dummyCharacters.attack += 10,
+        HP: characterHP,
+        name: dummyCharacters.name
+    };
     return (
       <Modal size="lg" show>
         <Modal.Title>
@@ -64,8 +65,8 @@ const MonsterBattle = props => {
           and gain plus 10 in your attack!
         </Modal.Title>
 
-        <button onClick={() => roomEnd()}>
-          <Link to="/Round2Left">Keep Exploring</Link>{" "}
+        <button>
+          <Link to={{pathname:"/Round2Left", state:{newChar} }}>Keep Exploring</Link>{" "}
         </button>
       </Modal>
     );

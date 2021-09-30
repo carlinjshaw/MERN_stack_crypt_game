@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import round2Img from '../../assets/round2Left.PNG'
 
 const round2Left = (props) => {
+const {oldChar}= props.location.state.newChar
+console.log(oldChar)
+console.log(props.location.state.newChar)
+
     return (
 
 
@@ -23,7 +27,7 @@ const round2Left = (props) => {
             <label for="psw">
               <b>The right side looks like something sharp was dragged on the ground.</b>
             </label>
-            <button type="submit" class="round1btns"> <Link to='/MonsterLeft2'>Go Right</Link>
+            <button type="submit" class="round1btns"> <Link to={{pathname:"/MonsterLeft2", state:{oldChar} }}>Go Right</Link>
             </button>
           </form>
         </div>
