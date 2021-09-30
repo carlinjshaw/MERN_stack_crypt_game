@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
 import { FormSelect } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { ADD_CHARACTER } from '../utils/mutations.js'
 import { useMutation } from '@apollo/client'
 import { Redirect } from 'react-router'
@@ -93,7 +93,6 @@ const saveCharacter = async () => {
   } catch(error){
     console.error(error)
   }
-
 }
 
 return (
@@ -125,7 +124,7 @@ return (
 <div class="character-questions" >Name your character:</div>
 
   <input class="name" onChange={inputHandler} id="characterName" value={charName}></input>
-      <button onClick={saveCharacter} class="character-start-button"> <Link to="/round1"> Start Game</Link></button>
+      <button onClick={saveCharacter} class="character-start-button"> <Link to={{pathname:"/round1",state:{newCharacter}}}> Start Game</Link></button>
 {/* </FloatingLabel> */}
 </div>
  )

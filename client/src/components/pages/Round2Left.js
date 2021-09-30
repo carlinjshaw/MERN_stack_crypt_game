@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import round2Img from '../../assets/round2Left.PNG'
 
 const round2Left = (props) => {
-const {oldChar}= props.location.state.newChar
+  const {oldChar}= props.location.state.newChar
 console.log(oldChar)
-console.log(props.location.state.newChar)
 
     return (
 
@@ -20,7 +19,7 @@ console.log(props.location.state.newChar)
             <label>
               <b>To the left, the path is quiet and unalarming.</b>
             </label>
-            <button  type="submit" class="round1btns"> <Link to='/LeftBonusRoom'>Go Left</Link>
+            <button  type="submit" class="round1btns"> <Link to={{pathname:'/LeftBonusRoom',state:{oldChar}}}>Go Left</Link>
              
             </button>
 

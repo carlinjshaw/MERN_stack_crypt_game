@@ -25,9 +25,12 @@ const dummyCharacters = {
 
 
 const MonsterBattle = (props) => {
+  const {oldChar}= props.location.state.oldChar
+  console.log(oldChar)
+
 //set up use states
     const [monsterAttack, setmonsterAttack] = useState(0);
-    const [characterHP, setCharacterHP] = useState(dummyCharacters.HP);
+    const [characterHP, setCharacterHP] = useState(oldChar.HP);
     
 //enemy attacks
 const orcAttacks = () => {
@@ -44,7 +47,7 @@ const [MonsterHP, setMonsterHP] = useState(Monster.HP);
 const attack = (event) => {
   // event.preventDefault()
   console.log("attacks");
-  setMonsterHP(MonsterHP - dummyCharacters.attack);
+  setMonsterHP(MonsterHP - oldChar.attack);
   orcAttacks();
 
   setCharacterHP(characterHP - monsterAttack);
@@ -61,6 +64,11 @@ const block = (event) => {
 if (characterHP < 1) {
     return <Redirect to='/DeathPage'/>
 } else if (MonsterHP < 1) {
+  let newChar ={
+    attack: oldChar.attack += 10,
+    HP: characterHP,
+    name: oldChar.name
+};
     return (
         <Modal 
         size='lg'
@@ -68,9 +76,9 @@ if (characterHP < 1) {
         >
 
             <Modal.Title>You have defeated the minotaur!
-                You acquire the minotaur's great scithe, and gain plus 15 in your attack!
+                You acquire the minotaur's great scithe and a mysterious scepter gain plus 15 in your attack!
             </Modal.Title>
-            <button><Link to='/lastRound'>Keep Exploring</Link>  </button>
+            <button><Link to={{pathname:'/lastRound', state:{newChar}}}>Keep Exploring</Link>  </button>
             
         </Modal>
     )
@@ -91,7 +99,7 @@ if (characterHP < 1) {
 
           <div>The minotaur is attacking {monsterAttack}</div>
           <div>
-            Your HP {characterHP}/{dummyCharacters.HP}
+            Your HP {characterHP}/{oldChar.HP}
           </div>
 
           <button class="btn-monster attack" onClick={() => attack()}>

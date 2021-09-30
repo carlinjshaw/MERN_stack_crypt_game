@@ -20,8 +20,11 @@ const Monster = {
 };
 
 const MonsterBattle3 = props => {
+  const {oldChar}= props.location.state.oldChar
+  console.log(oldChar)
+
   const [monsterAttack, setmonsterAttack] = useState(0);
-  const [characterHP, setCharacterHP] = useState(dummyCharacters.HP);
+  const [characterHP, setCharacterHP] = useState(oldChar.HP);
 
   const orcAttacks = () => {
     var number = Math.floor(Math.random() * 2);
@@ -33,16 +36,12 @@ const MonsterBattle3 = props => {
     }
   };
 
-  const roomEnd = () => {
-    dummyCharacters.HP += 20;
-    dummyCharacters.HP = characterHP;
-  };
 
   const [MonsterHP, setMonsterHP] = useState(Monster.HP);
   const attack = event => {
     // event.preventDefault()
     console.log("attacks");
-    setMonsterHP(MonsterHP - dummyCharacters.attack);
+    setMonsterHP(MonsterHP - oldChar.attack);
     orcAttacks();
 
     setCharacterHP(characterHP - monsterAttack);
@@ -57,14 +56,19 @@ const MonsterBattle3 = props => {
   if (characterHP < 1) {
     return <Redirect to="/DeathPage" />;
   } else if (MonsterHP < 1) {
+    let newChar ={
+      attack: oldChar.attack,
+      HP: characterHP + 20,
+      name: oldChar.name
+  };
     return (
       <Modal size="lg" show>
         <Modal.Title>
           You have defeated the Orc! You acquire the Slimes goopy armor, and
           gain plus 20HP and a staff of magic what could it be used for?
         </Modal.Title>
-        <button onClick={() => roomEnd()}>
-          <Link to="/lastRound">keep moving forward</Link>{" "}
+        <button>
+          <Link to={{pathname:"/lastRound",state:{newChar}}}>keep moving forward</Link>{" "}
         </button>
       </Modal>
     );
@@ -83,7 +87,7 @@ const MonsterBattle3 = props => {
 
         <div>The slime is attacking {monsterAttack}</div>
         <div>
-          HP {characterHP}/{dummyCharacters.HP}
+          HP {characterHP}/{oldChar.HP}
         </div>
 
         <button class="attack btn-monster" onClick={() => attack()}>
