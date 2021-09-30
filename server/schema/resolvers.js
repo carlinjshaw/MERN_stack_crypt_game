@@ -39,25 +39,25 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    // addCharacter: async (parent, args, context) => {
-    //   console.log("add character running");
-    //   const character = await Character.create(args);
-    //   console.log("character created");
-    //   const updateUser = await User.findOneAndUpdate(
-    //     {
-    //       _id: context.user._id,
-    //     },
-    //     {
-    //       $push: {
-    //         characters: character,
-    //       },
-    //     },
-    //     {
-    //       new: true,
-    //     },
-    //   );
-    //   return character;
-    // },
+    addCharacter: async (parent, args, context) => {
+      console.log("add character running");
+      const character = await Character.create(args);
+      console.log("character created");
+      const updateUser = await User.findOneAndUpdate(
+        {
+          _id: context.user._id,
+        },
+        {
+          $push: {
+            characters: character,
+          },
+        },
+        {
+          new: true,
+        },
+      );
+      return character;
+    },
   },
 };
 
