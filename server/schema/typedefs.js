@@ -14,6 +14,8 @@ type Mutation {
 }
 
   type Character {
+    HP: Int
+    attack: Int
     _id: ID!
   }
 
