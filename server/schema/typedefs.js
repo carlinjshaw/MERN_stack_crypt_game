@@ -17,7 +17,7 @@ type Mutation {
     HP: Int
     attack: Int
     _id: ID!
-    name: String 
+    name: String
   }
 
   type Auth {

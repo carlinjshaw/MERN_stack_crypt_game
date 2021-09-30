@@ -6,34 +6,39 @@ import { ADD_CHARACTER } from '../utils/mutations.js'
 import { useMutation } from '@apollo/client'
 
 
+const classes = {
+  wizard: {
+    HP: 8,
+    attack: 15
+  },
+  brute: {
+    HP: 18,
+    attack: 5
+  },
 
-const wizard = {
-  HP: 8,
-  attack: 15
-}
-const brute = {
-  HP: 18,
-  attack: 5
+  pokemon: {
+    HP: 10,
+    attack: 9
+  },
+
+  knight: {
+    HP: 10,
+    attack: 13
+  },
+
+  elf: {
+    HP: 9,
+    attack:14
+  }
 }
 
-const pokemon = {
-  HP: 10,
-  attack: 9
+const weapons = {
+ sword:{attack:10},
+   bow:{attack:8},
+ axe:{attack:7}
 }
 
-const knight = {
-  HP: 10,
-  attack: 13
-}
 
-const elf = {
-  HP: 9,
-  attack:14
-}
-
-const sword={attack:10}
-const bow={attack:8}
-const axe={attack:7}
 
 const CharacterForm = (props) => {
 
@@ -41,15 +46,38 @@ const CharacterForm = (props) => {
 
   const [addCharacter, {error}] = useMutation(ADD_CHARACTER)
 
+  const [charClass, setCharClass] = useState({})
+  const [charWeapon, setCharWeapon] = useState({})
+  const [charName, setCharName] = useState("")
+
 const inputHandler = (event) => {
    const {value} = event.target
+
+   if(event.target.id == "characterClass") {
+     // change the class state
+     setCharClass(classes[value])
+   } else if(event.target.id == "characterWeapon") {
+    // change the weapon state
+    setCharWeapon(weapons[value])
+  } else {
+    // change the name state
+    setCharName(value)
+  }
   //  setCharName(value)
 }
 
 
 const saveCharacter = async () => {
-  let newCharacter = {
 
+  console.log(charClass)
+  console.log(charWeapon)
+  console.log(charName)
+  
+
+  let newCharacter = {
+    name: charName,
+    attack: charClass.attack + charWeapon.attack,
+    HP: charClass.HP
   }
 
 
@@ -58,6 +86,9 @@ const saveCharacter = async () => {
       variables: { ...newCharacter }
     })
     console.log(data)
+
+    window.location.replace = '/Round1'
+
   } catch(error){
     console.error(error)
   }
@@ -70,29 +101,29 @@ return (
 
 {/* <FloatingLabel controlId="floatingSelect" label="Works with selects" */}
 
-<FormSelect  onChange={inputHandler} aria-label="Floating label select example">
+<FormSelect  onChange={inputHandler} id="characterClass" aria-label="Floating label select example">
   <option>Open this select menu</option>
-  <option value={elf}>Elf</option>
-  <option value={knight}>Knight</option>
-  <option value={pokemon}>Pokemon</option>
-  <option value={brute}>Brute</option>
-  <option value={wizard}>Wizard</option>
+  <option value="elf">Elf</option>
+  <option value="knight">Knight</option>
+  <option value="pokemon">Pokemon</option>
+  <option value="brute">Brute</option>
+  <option value="wizard">Wizard</option>
 </FormSelect>
 
 
 <div class="character-questions">Choose a weapon:</div>
 
-<FormSelect aria-label="Floating label select example">
+<FormSelect  onChange={inputHandler} aria-label="Floating label select example" id="characterWeapon">
   <option>Open this select menu</option>
-  <option value={bow}>Bow</option>
-  <option value={sword}>Sword</option>
-  <option value={axe}>Axe</option>
+  <option value="bow">Bow</option>
+  <option value="sword">Sword</option>
+  <option value="axe">Axe</option>
 </FormSelect>
 
-<div class="character-questions">Name your character:</div>
+<div class="character-questions" >Name your character:</div>
 
-  <input class="name" onChange={inputHandler}></input>
-      <button onClick={saveCharacter} class="character-start-button"> <Link to='/Round1'>  Start Game</Link></button>
+  <input class="name" onChange={inputHandler} id="characterName" value={charName}></input>
+      <button onClick={saveCharacter} class="character-start-button">  Start Game</button>
 {/* </FloatingLabel> */}
 </div>
  )
