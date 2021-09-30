@@ -4,8 +4,8 @@ import fruitImg from "../../assets/Fruits.png";
 import chestImg from "../../assets/chestplate.png";
 
 const Event4 = (props) => {
-  const {oldChar}= props.location.state.oldChar
-
+  const oldChar= props.location.state.oldChar
+console.log(oldChar)
   const [characterHP, setCharacterHP] = useState(oldChar.HP);
 
   let newChar={
@@ -14,15 +14,11 @@ const Event4 = (props) => {
     HP: oldChar.HP
 }
   const heal = () => {
-    setCharacterHP(characterHP + 22);
-    if (oldChar.HP < characterHP) {
-      setCharacterHP((characterHP = oldChar.HP));
-    }
-    newChar.HP= characterHP
+    newChar.HP= oldChar.HP +22
 
   };
   const chest = () => {
-    newChar.attack = oldChar.attack + 16;
+    newChar.HP= oldChar.HP + 16;
     
   };
 
@@ -38,14 +34,14 @@ const Event4 = (props) => {
         <p> Take a much needed potion for plus 22 health</p>
         <img class="bonusImgsLeftRoom items" src={fruitImg}></img>
         <button class="choose" onClick={() => heal()}>
-          <Link to="/lastRound">Choose fruit</Link>
+        <Link to={{pathname:"/lastRound", state:{newChar}}}>Choose fruit</Link>
         </button>
       </div>
       <div>
         <p> Use armor to coninue your conquest and gain plus 16 max HP. </p>
         <img class="bonusImgsLeftRoom items" src={chestImg}></img>
         <button class="choose" onClick={() => chest()}>
-          <Link to="/lastRound">Choose Armor</Link>
+        <Link to={{pathname:"/lastRound", state:{newChar}}}>Choose Armor</Link>
         </button>
       </div>
       <p>

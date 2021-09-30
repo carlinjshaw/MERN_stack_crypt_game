@@ -3,8 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import firstImg from "../../assets/first_img.PNG";
 
-const round1 = props => {
-  const {oldChar}= props.location.state.newCharacter
+const round1 = (props) => {
+  const oldChar= props.location.state.newCharacter
   console.log(oldChar)
   return (
     <div class="round1Image" style={{ backgroundImage: `url(${firstImg})` }}>

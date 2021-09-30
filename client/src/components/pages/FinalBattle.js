@@ -15,7 +15,8 @@ import { Modal} from 'react-bootstrap';
   
   
   const FinalBattle = (props) => {
-  const {oldChar}= props.location.state.newChar
+  const oldChar= props.location.state.newChar
+  console.log(oldChar)
 
 
     const win=()=>{
@@ -53,7 +54,7 @@ import { Modal} from 'react-bootstrap';
     }
   
   if (characterHP < 1) {
-      return <Redirect to='/'/>
+      return <Redirect to='/Death'/>
   } else if (MonsterHP < 1) {
       return (
           <Modal 

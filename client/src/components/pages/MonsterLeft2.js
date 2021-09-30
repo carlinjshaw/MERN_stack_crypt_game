@@ -16,7 +16,8 @@ import backgroundImg from '../../assets/battle-background1.jpg'
 
 
 const MonsterBattle = (props) => {
-  const {oldChar}= props.location.state.oldChar
+  const oldChar= props.location.state.oldChar
+  console.log(oldChar)
 
 //set up use states
     const [monsterAttack, setmonsterAttack] = useState(0);

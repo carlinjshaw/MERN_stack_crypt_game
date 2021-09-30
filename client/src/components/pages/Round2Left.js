@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import round2Img from '../../assets/round2Left.PNG'
 
 const round2Left = (props) => {
-  const {oldChar}= props.location.state.newChar
-console.log(oldChar)
+  const oldChar= props.location.state.newChar
+  console.log(oldChar)
 
     return (
 

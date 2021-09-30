@@ -1,9 +1,10 @@
 import React from 'react';
 import {useState} from 'react';
 import { FormSelect } from 'react-bootstrap';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ADD_CHARACTER } from '../utils/mutations.js'
 import { useMutation } from '@apollo/client'
+import { Redirect } from 'react-router'
 
 
 const classes = {
@@ -50,6 +51,12 @@ const CharacterForm = (props) => {
   const [charWeapon, setCharWeapon] = useState({})
   const [charName, setCharName] = useState("")
 
+  let newCharacter = {
+    name: charName,
+    attack: charClass.attack + charWeapon.attack,
+    HP: charClass.HP
+  }
+
 const inputHandler = (event) => {
    const {value} = event.target
 
@@ -64,22 +71,16 @@ const inputHandler = (event) => {
     setCharName(value)
   }
   //  setCharName(value)
+  console.log(newCharacter)
 }
-
 
 const saveCharacter = async () => {
 
   console.log(charClass)
   console.log(charWeapon)
   console.log(charName)
+
   
-
-  let newCharacter = {
-    name: charName,
-    attack: charClass.attack + charWeapon.attack,
-    HP: charClass.HP
-  }
-
 
   try {
     const {data} = await addCharacter({
@@ -87,13 +88,11 @@ const saveCharacter = async () => {
     })
     console.log(data)
 
+    // return (<Redirect to='/round1'/>)
 
   } catch(error){
     console.error(error)
   }
-  return(
-    <Redirect to={{pathname:"/round1",state:{newCharacter}}}/>
-)
 }
 
 return (
@@ -125,7 +124,9 @@ return (
 <div class="character-questions" >Name your character:</div>
 
   <input class="name" onChange={inputHandler} id="characterName" value={charName}></input>
-      <button onClick={saveCharacter} class="character-start-button">  Start Game</button>
+      <button onClick={saveCharacter} class="character-start-button">
+        <Link to={{pathname:"/round1",state:{newCharacter}}}> Start Game</Link>
+        </button>
 {/* </FloatingLabel> */}
 </div>
  )
