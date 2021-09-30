@@ -25,7 +25,7 @@ const dummyCharacters = {
 
 
 const MonsterBattle = (props) => {
-  const {oldChar}= props.location.state.oldChar
+  const oldChar= props.location.state.oldChar
   console.log(oldChar)
 
 //set up use states

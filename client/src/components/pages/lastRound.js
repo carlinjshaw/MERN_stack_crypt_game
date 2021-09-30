@@ -8,8 +8,8 @@ const dummyCharacters = {
     HP: 15,
   };
 const LastRound = (props) => {
-  const {oldChar}= props.location.state.newChar
-
+  const oldChar= props.location.state.newChar
+console.log(oldChar)
   let newChar={
     name:oldChar.name,
     attack: oldChar.attack,
@@ -17,10 +17,7 @@ const LastRound = (props) => {
 }
     const [characterHP, setCharacterHP] = useState(oldChar.HP);
     const heal= () =>{
-        setCharacterHP(characterHP +25)
-        if(oldChar.HP<characterHP){
-            setCharacterHP(characterHP=oldChar.HP)
-        }
+      newChar.HP= oldChar.HP +22
         
       }
 
@@ -42,13 +39,15 @@ const LastRound = (props) => {
             <label>
               <b>Do you sharpen your weapon before the boss? </b>
             </label>
-            <button onClick={() => chest()} type="submit" class="round1btns"><Link to='/FinalBattle'>Sharpen</Link>
+            <button onClick={() => chest()} type="submit" class="round1btns">
+              <Link to={{pathname:"/FinalBattle", state:{newChar}}}>Sharpen</Link>
             </button>
 
             <label for="psw">
               <b>Or do you tend to your wounds?</b>
             </label>
-            <button onClick={() => heal()} type="submit" class="round1btns"> <Link to='/FinalBattle'>Tend</Link>
+            <button onClick={() => heal()} type="submit" class="round1btns">
+              <Link to={{pathname:"/FinalBattle", state:{newChar}}}>Tend</Link>
             </button>
           </form>
         </div>

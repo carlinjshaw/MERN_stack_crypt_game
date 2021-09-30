@@ -9,8 +9,8 @@ const dummyCharacters = {
 };
 
 const Event1 = (props) => {
-  const {oldChar}= props.location.state.oldChar
-
+  const oldChar= props.location.state.oldChar
+console.log(oldChar)
   const [characterHP, setCharacterHP] = useState(oldChar.HP);
 
   let newChar={
@@ -20,15 +20,13 @@ const Event1 = (props) => {
   }
 
   const heal = () => {
-    setCharacterHP(characterHP + 10);
-    if (oldChar.HP < characterHP) {
-      setCharacterHP((characterHP = oldChar.HP));
-    }
-    newChar.HP= characterHP
+    // if (oldChar.HP < characterHP) {
+    //   setCharacterHP((characterHP = oldChar.HP));
+    // }
+    newChar.HP= oldChar.HP +10
   };
   const chest = () => {
     newChar.attack = oldChar.attack + 4;
-
   };
 
   return (

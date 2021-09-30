@@ -20,8 +20,8 @@ const Monster = {
 };
 
 const MonsterBattle3 = props => {
-  const {oldChar}= props.location.state.oldChar
-  console.log(oldChar)
+  const oldChar= props.location.state.oldChar
+console.log(oldChar)
 
   const [monsterAttack, setmonsterAttack] = useState(0);
   const [characterHP, setCharacterHP] = useState(oldChar.HP);

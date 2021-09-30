@@ -3,14 +3,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import firstImg from "../../assets/first_img.PNG";
 
-const round1 = props => {
-  const {oldChar}= props.location.state.newCharacter
+const round1 = (props) => {
+  const oldChar= props.location.state.newCharacter
   console.log(oldChar)
   return (
     <div class="round1Image" style={{ backgroundImage: `url(${firstImg})` }}>
       <div class="round1">
         <div>
-          <img class="round1Image" src={firstImg} alt="Snow"></img>
+          
 
           <form action="/action_page.php" class="round1form">
             <h2>Shortly after entering the cave, you find a fork in the path...</h2>

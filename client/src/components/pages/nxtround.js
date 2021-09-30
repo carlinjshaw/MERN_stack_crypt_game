@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import round4Img from '../../assets/cave4Img.PNG'
 
 const round4 = (props) => {
-  const {oldChar}= props.location.state.newChar
-
+  const oldChar= props.location.state.newChar
+  console.log(oldChar)
     return (
 
       

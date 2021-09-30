@@ -23,7 +23,7 @@ const dummyCharacters = {
   
   
   const FinalBattle = (props) => {
-  const {oldChar}= props.location.state.newChar
+  const oldChar= props.location.state.newChar
   console.log(oldChar)
 
 
@@ -62,7 +62,7 @@ const dummyCharacters = {
     }
   
   if (characterHP < 1) {
-      return <Redirect to='/'/>
+      return <Redirect to='/Death'/>
   } else if (MonsterHP < 1) {
       return (
           <Modal 

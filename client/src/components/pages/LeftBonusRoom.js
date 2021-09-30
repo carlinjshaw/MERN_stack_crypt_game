@@ -4,41 +4,33 @@ import { Link } from "react-router-dom";
 import potionImg from "../../assets/potion.png";
 import swordImg from "../../assets/sword.png";
 
-const dummyCharacters = {
-  name: "dummy",
-  attack: 15,
-  HP: 15,
-};
 
 const BonusPage = props => {
-  const {oldChar}= props.location.state.oldChar
+  const oldChar= props.location.state.oldChar
+  console.log(oldChar)
 
   const [characterHP, setCharacterHP] = useState(oldChar.HP);
-  const [characterAttack, setCharacterAttack] = useState(
-    oldChar.attack,
-  );
+  const [characterAttack, setCharacterAttack] = useState(oldChar.attack);
+
+  const potion = () => {
+    newChar.HP= oldChar.HP +10
+    // if(oldChar.HP<characterHP){
+      //     setCharacterHP(characterHP=oldChar.HP)
+      // }
+      // newChar.HP= characterHP
+    }
+    //this is NOT the best way, but only way I could get the modal to return
+    
+    const sword = () => {
+      newChar.attack = oldChar.attack + 5;    
+    };
+
+  
   let newChar={
     name:oldChar.name,
-    attack: oldChar.attack,
-    HP: oldChar.HP
+    attack: characterAttack,
+    HP: characterHP
 }
-  const potion = event => {
-    event.preventDefault();
-    setCharacterHP(characterHP +10)
-    if(oldChar.HP<characterHP){
-        setCharacterHP(characterHP=oldChar.HP)
-    }
-    newChar.HP= characterHP
-  }
-  //this is NOT the best way, but only way I could get the modal to return
-
-  const sword = () => {
-    setCharacterAttack(characterAttack + 5);
-    newChar.attack= characterAttack
-  };
-  //this is NOT the best way, but only way I could get the modal to return
-  //might need to be changed depending on how we import character data
-
   return (
     <div>
       <div>
