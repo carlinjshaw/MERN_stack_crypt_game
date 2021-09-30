@@ -88,13 +88,12 @@ const saveCharacter = async () => {
     })
     console.log(data)
 
-    window.location.replace = '/Round1'
+    // return (<Redirect to='/round1'/>)
 
   } catch(error){
     console.error(error)
   }
 
-  return <Redirect to='/round1'/>
 }
 
 return (
@@ -126,7 +125,7 @@ return (
 <div class="character-questions" >Name your character:</div>
 
   <input class="name" onChange={inputHandler} id="characterName" value={charName}></input>
-      <button onClick={saveCharacter} class="character-start-button">  Start Game</button>
+      <button onClick={saveCharacter} class="character-start-button"> <Link to="/round1"> Start Game</Link></button>
 {/* </FloatingLabel> */}
 </div>
  )
