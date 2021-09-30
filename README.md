@@ -8,7 +8,7 @@ Front-End: React Bootstrap, React DOM Router, React redirect and UseState, HTML,
 
 Back-End: GraphQL, MongoDB, Mongoose, Node, Heroku
 
-Live link: put link here
+Live link: https://crypt-crawler.herokuapp.com/
 
 ![image](https://user-images.githubusercontent.com/82618604/135370823-8e0233d0-e5ce-4c8b-9834-4b22cac73a20.png)
 ##  Deployed app
