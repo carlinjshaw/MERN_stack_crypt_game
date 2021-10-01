@@ -29,6 +29,7 @@ type Mutation {
     _id: ID
     username: String
     email: String
+    characters:[]
   }
 `;
 
