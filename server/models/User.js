@@ -21,7 +21,8 @@ const userSchema = new Schema(
     },
     characters:[{
       type: CharSchema,
-      required: false
+      required: false,
+      nullable: true
     }],
     
   },

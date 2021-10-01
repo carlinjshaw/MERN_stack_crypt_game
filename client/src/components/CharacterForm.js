@@ -4,7 +4,7 @@ import { FormSelect } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ADD_CHARACTER } from '../utils/mutations.js'
 import { useMutation } from '@apollo/client'
-import { Redirect } from 'react-router'
+
 
 
 const classes = {
