@@ -58,7 +58,7 @@ console.log(oldChar)
     return (
       <Modal size="lg" show>
         <Modal.Title>
-          You have defeated the Orc! You acquire the Slimes goopy armor, and
+          You have defeated the Slime thing! You acquire the Slimes goopy armor, and
           gain plus 20HP and a staff of magic what could it be used for?
         </Modal.Title>
         <button>
