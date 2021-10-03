@@ -83,6 +83,7 @@ const saveCharacter = async () => {
   
 
   try {
+    console.log({variables: { ...newCharacter }})
     const {data} = await addCharacter({
       variables: { ...newCharacter }
     })

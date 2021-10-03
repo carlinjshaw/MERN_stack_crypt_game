@@ -4,7 +4,8 @@ const CharSchema = new Schema(
   {
     name: {
       type: String,
-      required: true
+      required: true,
+      index:{ unique: true, sparse: true }
     },
     attack:{
         type: Number,

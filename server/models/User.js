@@ -22,7 +22,8 @@ const userSchema = new Schema(
     characters:[{
       type: CharSchema,
       required: false,
-      nullable: true
+      nullable: true,
+      index:{ unique: true, sparse: true }
     }],
     
   },
